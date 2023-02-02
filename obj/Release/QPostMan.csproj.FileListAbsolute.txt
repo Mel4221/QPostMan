@@ -1,0 +1,15 @@
+C:\Users\Melquiceded Balbi\Documents\csharp\QPostMan\bin\Release\QPostMan.exe.config
+C:\Users\Melquiceded Balbi\Documents\csharp\QPostMan\bin\Release\QPostMan.exe
+C:\Users\Melquiceded Balbi\Documents\csharp\QPostMan\bin\Release\QPostMan.pdb
+C:\Users\Melquiceded Balbi\Documents\csharp\QPostMan\bin\Release\QuickTools.dll
+C:\Users\Melquiceded Balbi\Documents\csharp\QPostMan\bin\Release\QuickTools.xml
+C:\Users\Melquiceded Balbi\Documents\csharp\QPostMan\obj\Release\QPostMan.csproj.AssemblyReference.cache
+C:\Users\Melquiceded Balbi\Documents\csharp\QPostMan\obj\Release\QPostMan.csproj.SuggestedBindingRedirects.cache
+C:\Users\Melquiceded Balbi\Documents\csharp\QPostMan\obj\Release\QPostMan.MainWindo.resources
+C:\Users\Melquiceded Balbi\Documents\csharp\QPostMan\obj\Release\QPostMan.MessageWindow.resources
+C:\Users\Melquiceded Balbi\Documents\csharp\QPostMan\obj\Release\QPostMan.Properties.Resources.resources
+C:\Users\Melquiceded Balbi\Documents\csharp\QPostMan\obj\Release\QPostMan.csproj.GenerateResource.cache
+C:\Users\Melquiceded Balbi\Documents\csharp\QPostMan\obj\Release\QPostMan.csproj.CoreCompileInputs.cache
+C:\Users\Melquiceded Balbi\Documents\csharp\QPostMan\obj\Release\QPostMan.csproj.CopyComplete
+C:\Users\Melquiceded Balbi\Documents\csharp\QPostMan\obj\Release\QPostMan.exe
+C:\Users\Melquiceded Balbi\Documents\csharp\QPostMan\obj\Release\QPostMan.pdb
