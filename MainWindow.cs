@@ -90,26 +90,33 @@ namespace QPostMan
 
         messageWindow.MessageText = http.Get();
                 messageWindow.Show();
-                
-                
-              
-                if (http.Headers.Count != 0)
+
+
+                if (http.Headers.Count == 0)
                 {
-                    for (int col = 0; col < http.Response.Headers.Count-1; col++)
-                    {
-                        try
-                        {
-                            this.ResponseHeaders.Rows[col].Cells[0].Value = http.Response.Headers.GetKey(col);
-                            this.ResponseHeaders.Rows[col].Cells[1].Value = http.Response.Headers[col];
-                        }
-                        catch
-                        {
-                             
-                            break;
-                        }
-                    }
-                
+                    return;
                 }
+
+                if (http.Headers == null)
+                {
+                    return;
+                }
+
+                for (int col = 0; col < http.Response.Headers.Count-1; col++)
+                {
+                    try
+                    {
+                        this.ResponseHeaders.Rows[col].Cells[0].Value = http.Response.Headers.GetKey(col);
+                        this.ResponseHeaders.Rows[col].Cells[1].Value = http.Response.Headers[col];
+                    }
+                    catch
+                    {
+                             
+                        break;
+                    }
+                }
+                
+                
                    
                   
                 }
