@@ -261,805 +261,116 @@
             <param name="textColor">Text color.</param>
             <param name="backgroundColor">Background color.</param>
         </member>
-        <member name="T:QuickTools.QCore.Check">
+        <member name="T:QuickTools.QConsole.ShellInput">
             <summary>
-            This is an abstraction of Stoop Watch which provide some functionalities from the same class
+            Creates a shell and returns the input as a plain text 
             </summary>
         </member>
-        <member name="P:QuickTools.QCore.Check.Seconds">
+        <member name="F:QuickTools.QConsole.ShellInput.UserName">
             <summary>
-            Gets or sets the seconds.
+            set the user name 
             </summary>
-            <value>The seconds.</value>
         </member>
-        <member name="P:QuickTools.QCore.Check.Minutes">
+        <member name="F:QuickTools.QConsole.ShellInput.ProgramName">
             <summary>
-            Gets or sets the minutes.
+            set the program name 
             </summary>
-            <value>The minutes.</value>
         </member>
-        <member name="P:QuickTools.QCore.Check.Milliseconds">
+        <member name="F:QuickTools.QConsole.ShellInput.ComputerName">
             <summary>
-            Gets or sets the milliseconds.
+            set te computer name 
             </summary>
-            <value>The milliseconds.</value>
         </member>
-        <member name="M:QuickTools.QCore.Check.Start">
+        <member name="F:QuickTools.QConsole.ShellInput.CurrentPath">
             <summary>
-            Start this instance.
+            SEt the current path 
             </summary>
         </member>
-        <member name="M:QuickTools.QCore.Check.Stop">
+        <member name="F:QuickTools.QConsole.ShellInput.TextSimbol">
             <summary>
-            Stop this instance.
+            the tag that stars before the text 
             </summary>
-            <returns>The stop.</returns>
         </member>
-        <member name="M:QuickTools.QCore.Check.ToString">
+        <member name="F:QuickTools.QConsole.ShellInput.AtSimbol">
             <summary>
-            Returns a <see cref="T:System.String"/> that represents the current <see cref="T:QuickTools.Check"/>.
+            the at simbol in between the name of the machine and the user 
             </summary>
-            <returns>A <see cref="T:System.String"/> that represents the current <see cref="T:QuickTools.Check"/>.</returns>
         </member>
-        <member name="T:QuickTools.QCore.Get">
-            <summary>
-            Get The bigest class In Quicktools
-            does multiple stuff and contains must of the 
-            tools that started this Project.
-            </summary>
-        </member>
-        <member name="M:QuickTools.QCore.Get.Loop(System.Action)">
-            <summary>
-            Loop the specified actionMethod forever
-            </summary>
-            <param name="actionMethod">Action method.</param>
-        </member>
-        <member name="M:QuickTools.QCore.Get.Loop(System.Action,System.Func{System.Boolean})">
-            <summary>
-            Loop the specified actionMethod until the condition is meet.
-            </summary>
-            <param name="actionMethod">Action method.</param>
-            <param name="untilConditionIsMeet">Until condition is meet.</param>
-        </member>
-        <member name="M:QuickTools.QCore.Get.Status(System.Object,System.Object)">
-            <summary>
-            Get the porcenrage status of the provided current time and goal 
-            </summary>
-            <returns>The status.</returns>
-            <param name="current">Current.</param>
-            <param name="goal">Goal.</param>
-        </member>
-        <member name="M:QuickTools.QCore.Get.Line">
-            <summary>
-            Returns a line divition using the Enviroment.NewLine command. 
-            </summary>
-            <returns>The corresponding line for the console</returns>
-        </member>
-        <member name="M:QuickTools.QCore.Get.HashCode(System.Byte[])">
-            <summary>
-            This Creates a hash code based on the given input 
-            be carefull using this as a security method since 
-            this macanisim is too simple and it could be broken easely
-            </summary>
-            <returns>The code.</returns>
-            <param name="bytes">Bytes.</param>
-        </member>
-        <member name="M:QuickTools.QCore.Get.HashCode(System.String,System.Int32)">
-            <summary>
-            This has the same level of security of <see cref="M:QuickTools.QCore.Get.HashCode(System.String)"/>
-            which measn that is not secure enough so if you need encription
-            please refer to <see cref="T:QuickTools.QSecurity.Secure"/>
-            </summary>
-            <param name="text"></param>
-            <param name="length"></param>
-            <returns></returns>
-            <exception cref="T:System.ArgumentNullException"></exception>
-        </member>
-        <member name="M:QuickTools.QCore.Get.HashCode(System.String)">
-            <summary>   
-            This Creates a hash code based on the given input 
-            be carefull using this as a security method since 
-            this macanisim is too simple and it could be broken easely
-            </summary>
-            <returns>The code.</returns>
-            <param name="text">Text.</param>
-        </member>
-        <member name="M:QuickTools.QCore.Get.WaitTime(System.Int32)">
-            <summary>
-            WaitTime basically is an abstraction of 
-            System.Threading.Sleep(<paramref name="milliSecondsOrseconds"/>);
-            and it basically wait the time in it , it also 
-            contains a try catch just in case if something fails
-            </summary>
-            <param name="milliSecondsOrseconds">Sleep time.</param>
-        </member>
-        <member name="M:QuickTools.QCore.Get.WaitTime">
-            <summary>
-            Does the same than the waittime with no param 
-            but this only wait or sleep 1000 milliseconds 
-            </summary>
-        </member>
-        <member name="M:QuickTools.QCore.Get._(System.Int32)">
-            <summary>
-            This does the same thing than WaitTime with param but it actually
-            has a different name 
-            </summary>
-            <param name="sleepTime">Sleep time.</param>
-        </member>
-        <member name="M:QuickTools.QCore.Get.CurrentPath">
-            <summary>
-            This method Returns the current path from the application
-            </summary>
-            <returns>Returns the current path</returns>
-        </member>
-        <member name="F:QuickTools.QCore.Get.Path">
-            <summary>
-            Abstraction for Directory.GetCurrentDirectory(); 
-            returns the current string path 
-            </summary>
-        </member>
-        <member name="M:QuickTools.QCore.Get.DataPath">
-            <summary>
-            This method Create a folder inside the root of the program
-            and create a folder that can be use for the program 
-            it work like this ProgramRoot/data/qt/...
-            also if the program has a folder that is already called data
-            it will not override it 
-            </summary>
-            <returns>string path </returns>
-        </member>
-        <member name="M:QuickTools.QCore.Get.DataPath(System.String)">
-            <summary>
-            Create a data path if is not created and creates the directory given as a parameter
-            </summary>
-            <returns></returns>
-            <param name="newDirectory"></param>
-        </member>
-        <member name="M:QuickTools.QCore.Get.SaveKey">
-            <summary>
-            This method can used manually
-            or automatically 
-            by calling directly the RandomByteKey(true); 
-            and adding the parameter the bool true 
-            for it to auto save the key 
-            </summary>
-        </member>
-        <member name="M:QuickTools.QCore.Get.SaveKey(System.String)">
-            <summary>
-            Save the key Generated on the given path 
-            </summary>
-            <param name="pathToSaveTheKey">Path to save the key.</param>
-        </member>
-        <member name="M:QuickTools.QCore.Get.KeyBytesSaved">
-            <summary>
-            This Method gets the key bytes that were saved before by using the method 
-            before that was the method save key 
-            </summary>
-            <returns>The bytes saved.</returns>
-        </member>
-        <member name="M:QuickTools.QCore.Get.KeyBytesSaved(System.String)">
-            <summary>
-            Read the string bytes stored in a file 
-            </summary>
-            <returns>The bytes saved.</returns>
-            <param name="path">Path.</param>
-        </member>
-        <member name="M:QuickTools.QCore.Get.Check">
-            <summary>
-             This basically just check if a name could be a valid
-            name for a file in windows mainly and it 
-            returns true if the check it is correct 
-            </summary>
-            <returns>True or False</returns>
-        </member>
-        <member name="F:QuickTools.QCore.Get.Text">
-            <summary>
-            Return the text taken by any of the fallowing 
-            Get.Input()
-            Get.InputText(); 
-            </summary>
-        </member>
-        <member name="F:QuickTools.QCore.Get.Number">
-            <summary>
-            Returns the Number taken by the fallowing
-            Get.Input();
-            Get.NumberInput(); 
-            </summary>
-        </member>
-        <member name="F:QuickTools.QCore.Get.input">
-            <summary>
-             Returns the text taken by
-             Get.Input();
-             </summary>           
-        </member>
-        <member name="F:QuickTools.QCore.Get.Key">
-            <summary>
-             Returns the Key from  the Get.KeyInput()
-             method 
-            </summary>           
-        </member>
-        <member name="P:QuickTools.QCore.Get.Char">
-            <summary>
-            Gets or sets the char.
-            </summary>
-            <value>The char.</value>
-        </member>
-        <member name="P:QuickTools.QCore.Get.Modifier">
-            <summary>
-            Gets or sets the modifier.
-            </summary>
-            <value>The modifier.</value>
-        </member>
-        <member name="M:QuickTools.QCore.Get.KeyInput">
-            <summary>
-            Keies the input.
-            </summary>
-            <returns>The input.</returns>
-        </member>
-        <member name="M:QuickTools.QCore.Get.InputArray">
-            <summary>
-            Get the Input as an array the array.
-            </summary>
-            <returns>The array.</returns>
-        </member>
-        <member name="M:QuickTools.QCore.Get.InputArray(System.Object)">
-            <summary>
-            Get the Input as an array the array.
-            </summary>
-            <returns>The array.</returns>
-            <param name="label">Label.</param>
-        </member>
-        <member name="F:QuickTools.QCore.Get.InputChar">
-            <summary>
-            This is the char that is located at the biggining of the 
-            Get.Input() method and it has to be added a method where
-            it will save the char if is changed
-            </summary>
-        </member>
-        <member name="T:QuickTools.QCore.Get.InputType">
-            <summary>
-            Input type.
-            </summary>
-        </member>
-        <member name="P:QuickTools.QCore.Get.InputType.Text">
-            <summary>
-            Gets or sets the text.
-            </summary>
-            <value>The text.</value>
-        </member>
-        <member name="P:QuickTools.QCore.Get.InputType.Number">
-            <summary>
-            Gets or sets the number.
-            </summary>
-            <value>The number.</value>
-        </member>
-        <member name="P:QuickTools.QCore.Get.InputType.Bool">
-            <summary>
-            Gets or sets a value indicating whether this <see cref="T:QuickTools.Get.InputType"/> is bool.
-            </summary>
-            <value><c>true</c> if bool; otherwise, <c>false</c>.</value>
-        </member>
-        <member name="M:QuickTools.QCore.Get.InputType.ToString">
-            <summary>
-            Returns a <see cref="T:System.String"/> that represents the current <see cref="T:QuickTools.Get.InputType"/>.
-            </summary>
-            <returns>A <see cref="T:System.String"/> that represents the current <see cref="T:QuickTools.Get.InputType"/>.</returns>
-        </member>
-        <member name="M:QuickTools.QCore.Get.Input">
-            <summary>
-            This Method Get the input from the keyboard
-            and it returns an object and is an implementation 
-            </summary>
-            <returns>The input.</returns>
-        </member>
-        <member name="M:QuickTools.QCore.Get.Input(System.String)">
-            <summary>
-            This Method does the same as Input() without any 
-            arguments but with the only diference that the char
-            on the side at the bigging could be edited 
-            like Get.Input("Write Your Name");.
-            </summary>
-            <returns>The input.</returns>
-            <param name="display">Display.</param>
-        </member>
-        <member name="M:QuickTools.QCore.Get.IsNumber(System.Object)">
-            <summary>
-            This is a very generic Number Checker
-            that veryfied if the input passed as an argument
-            could be a number or not and it returns
-            true or false if is or not a number
-            </summary>
-            <returns>Retursn True or False if is number : True if is not a number returns: false</returns>
-            <param name="input">Input.</param>
-        </member>
-        <member name="M:QuickTools.QCore.Get.NumberInput">
-            <summary>
-            Get the Number from the input introduced 
-            </summary>
-            <returns>The input.</returns>
-        </member>
-        <member name="M:QuickTools.QCore.Get.NumberInput(System.Boolean)">
-            <summary>
-            Get a number in put and returns a double 
-            </summary>
-            <returns>The input.</returns>
-            <param name="BigNumber">If set to <c>true</c> big number.</param>
-        </member>
-        <member name="M:QuickTools.QCore.Get.Reset">
-            <summary>
-            Shortcut for Console.Reset(); 
-            </summary>
-        </member>
-        <member name="M:QuickTools.QCore.Get.Clear">
-            <summary>
-            shurtcut for Console.Clear(); 
-            </summary>
-        </member>
-        <member name="M:QuickTools.QCore.Get.Label(System.Object)">
-            <summary>
-            Write text with background color in color magentaand some space around it 
-            and seems like a type of a label and takes an argument of an object to avoid casting
-            </summary>
-            <param name="msg">Message.</param>
-        </member>
-        <member name="M:QuickTools.QCore.Get.LabelSide(System.Object)">
-            <summary>
-            simmilar to Console.Write
-            but prints to the console a text on magenta
-            </summary>
-            <param name="msg">Message content</param>
-        </member>
-        <member name="M:QuickTools.QCore.Get.LabelSingle(System.Object)">
-            <summary>
-            Print Text on the side of the console using Console.Write
-            and gives it a Magenta color 
-            </summary>
-            <param name="msg">Message.</param>
-        </member>
-        <member name="M:QuickTools.QCore.Get.Title(System.Object)">
-            <summary>
-            Console.Title implementation 
-            </summary>
-            <param name="msg">Message.</param>
-        </member>
-        <member name="M:QuickTools.QCore.Get.Title(System.Object,System.Int32)">
-            <summary>
-            Console.WriteLine(object) implementation with \n to give the text more space
-            to the right 
-            </summary>
-            <param name="msg">Message.</param>
-            <param name="tabs">Tabs.</param>
-        </member>
-        <member name="M:QuickTools.QCore.Get.Box(System.Object)">
-            <summary>
-            Box the specified content.
-            </summary>
-            <param name="content">Content.</param>
-        </member>
-        <member name="M:QuickTools.QCore.Get.Box(System.Object,System.Object)">
-            <summary>
-            Box the specified content and simbol.
-            </summary>
-            <param name="content">Content.</param>
-            <param name="simbol">Simbol.</param>
-        </member>
-        <member name="M:QuickTools.QCore.Get.Box(System.Object,System.Int32)">
-            <summary>
-            Box the specified content and tabs.
-            </summary>
-            <param name="content">Content.</param>
-            <param name="tabs">Tabs.</param>
-        </member>
-        <member name="M:QuickTools.QCore.Get.Box(System.Object,System.String,System.Int32)">
-            <summary>
-            Box the specified content, simbol and tabs.
-            </summary>
-            <param name="content">Content.</param>
-            <param name="simbol">Simbol.</param>
-            <param name="tabs">Tabs.</param>
-        </member>
-        <member name="M:QuickTools.QCore.Get.Wrong(System.Object)">
-            <summary>
-            Write Text with Console.WriteLine add red color and wait for a key to be pressed 
-            </summary>
-            <param name="text">Text.</param>
-        </member>
-        <member name="M:QuickTools.QCore.Get.WrongIn(System.Object)">
-            <summary>
-            Write Text with Console.WriteLine add red color and wait for a key to be pressed 
-            </summary>
-            <param name="msg">Message.</param>
-        </member>
-        <member name="M:QuickTools.QCore.Get.WrongInput(System.Object)">
-            <summary>
-            Write Text with Console.WriteLine add red color and wait for a key to be pressed 
-            </summary>
-            <param name="msg">Message.</param>
-        </member>
-        <member name="M:QuickTools.QCore.Get.Password">
-            <summary>
-            Gets an input without showing it on the screen
-            </summary>
-            <returns>The password.</returns>
-        </member>
-        <member name="M:QuickTools.QCore.Get.NotFound(System.Object)">
-            <summary>
-            Alert Not found write the file that was not founded and print it on color red
-            </summary>
-            <param name="msg">Message.</param>
-        </member>
-        <member name="M:QuickTools.QCore.Get.Wait">
-            <summary>
-            Wait for a key to be pressed 
-            </summary>
-        </member>
-        <member name="M:QuickTools.QCore.Get.Wait(System.Object)">
-            <summary>
-            Very similar to Console.ReadKey
-            but it has some content added to display
-            the Text from it and is basically used
-            to display the text witout closing the console
-            in some cases the console will close to quickly 
-            </summary>
-            <param name="Caller">Text Needed to be printed</param>
-        </member>
-        <member name="M:QuickTools.QCore.Get.Ok">
-            <summary>
-            Literally Print a line saying ok 
-            on color green 
-            </summary>
-        </member>
-        <member name="M:QuickTools.QCore.Get.Ok(System.Int32)">
-            <summary>
-            This is just used when you need to see if some logic is working as spected
-            so each ok number provide a different color and each of them are from 0 to 4 
-            and the colors available are (Green 0, Yellow 1, Blue 2,  Red 3, Cyan 4)
-            </summary>
-            <param name="colorNumber">Color number.</param>
-        </member>
-        <member name="M:QuickTools.QCore.Get.Alert(System.Object)">
-            <summary>
-            Similar to Console.WriteLine(object); 
-            but add a box of color yellow saying alert
-            and the fallowing text that is pass as an argument
-            will be printed on yellow color 
-            </summary>
-            <param name="msg">Message Content</param>
-        </member>
-        <member name="M:QuickTools.QCore.Get.Hide">
-            <summary>
-            this is a very smallintent of  trying to hide the password
-            while is being pressed 
-            </summary>
-        </member>
-        <member name="M:QuickTools.QCore.Get.HideText">
-            <summary>
-            This try to hide the text
-            </summary>
-        </member>
-        <member name="M:QuickTools.QCore.Get.W(System.Object)">
-            <summary>
-            Console.WriteLine(object) shurtcut
-            </summary>
-            <param name="text">Text.</param>
-        </member>
-        <member name="M:QuickTools.QCore.Get.WL(System.Object)">
-            <summary>
-            Write to the console the given text
-            </summary>
-            <param name="text">Text.</param>
-        </member>
-        <member name="M:QuickTools.QCore.Get.WriteL(System.Object)">
-            <summary>
-            Writes the line
-            </summary>
-            <param name="text">Text.</param>
-        </member>
-        <member name="M:QuickTools.QCore.Get.Write(System.Object,System.Int32)">
-            <summary>
-            Write the specified text and tabs.
-            </summary>
-            <param name="text">Text.</param>
-            <param name="tabs">Tabs.</param>
-        </member>
-        <member name="M:QuickTools.QCore.Get.Write(System.Object)">
-            <summary>
-            Write the specified value.
-            </summary>
-            <param name="value">Value.</param>
-        </member>
-        <member name="M:QuickTools.QCore.Get.About">
-               public static string Version = "A032022";
-               private static string lastModified = "03/23/2022";
-            
-            <summary>
-            This Print QuickTools logo to the console , not really useful , but looks cool . 
-            </summary>
-        </member>
-        <member name="T:QuickTools.QCore.Do">
-            <summary>
-            Extention Of Get Due to Old Programs using this abstraction
-            </summary>
-        </member>
-        <member name="T:QuickTools.QCore.IRandom">
-            <summary>
-            The class new it is the one who will containe multiple methodthat will handle new random data 
-            The name was changed due to making more sence if is called like 
-            and you know what i will create  another class just because 
-            that could be called on the same maner 
-            </summary>
-        </member>
-        <member name="F:QuickTools.QCore.IRandom.Generated">
-            <summary>
-            Contains the password Generated 
-            </summary>
-        </member>
-        <member name="F:QuickTools.QCore.IRandom.LowerCase">
-            <summary>
-            Array Of Words LowerCase
-            </summary>
-        </member>
-        <member name="F:QuickTools.QCore.IRandom.UpperCase">
-            <summary>
-            Array Of Words Upercase
-            </summary>
-        </member>
-        <member name="F:QuickTools.QCore.IRandom.Symbols">
-            <summary>
-            Array Of Symbols
-            </summary>
-        </member>
-        <member name="M:QuickTools.QCore.IRandom.Password">
-            <summary>
-            Generate a Random Passord with a max 9 digits
-            </summary>
-            <returns>The password.</returns>
-        </member>
-        <member name="M:QuickTools.QCore.IRandom.Password(System.Int32,System.Boolean)">
-            <summary>
-            Password the specified passwordLenght and noSpecialSimbols.
-            </summary>
-            <returns>The password.</returns>
-            <param name="passwordLenght">Password lenght.</param>
-            <param name="noSpecialSimbols">If set to <c>true</c> no special simbols.</param>
-        </member>
-        <member name="F:QuickTools.QCore.IRandom.RandomTextCounter">
-            <summary>
-            The random text counter.
-            </summary>
-        </member>
-        <member name="M:QuickTools.QCore.IRandom.RandomText(System.Double)">
-            <summary>
-            Generat Randoms text completly chunked together useful to create random passwords or anything that requires a long string of text.
-            </summary>
-            <returns>The text.</returns>
-            <param name="textLength">Text length.</param>
-        </member>
-        <member name="M:QuickTools.QCore.IRandom.RandomText(System.Double,System.Action)">
-            <summary>
-            Randoms the text.
-            </summary>
-            <returns>The text.</returns>
-            <param name="textLength">Text length.</param>
-            <param name="callBack">Call back.</param>
-        </member>
-        <member name="M:QuickTools.QCore.IRandom.Password(System.Int32)">
-            <summary>
-            Password the specified passwordLenght.
-            </summary>
-            <returns>The password.</returns>
-            <param name="passwordLenght">Password lenght.</param>
-        </member>
-        <member name="F:QuickTools.QCore.IRandom.pin">
-            <summary>
-            The pin generated
-            </summary>
-        </member>
-        <member name="M:QuickTools.QCore.IRandom.Pin">
-            <summary>
-            This Method create a random pin of 4 digits and return it 
-            </summary>
-            <returns>The pin.</returns>
-        </member>
-        <member name="M:QuickTools.QCore.IRandom.Pin(System.Int32)">
-            <summary>
-            Create a pin of the specified length.
-            </summary>
-            <returns>The pin.</returns>
-            <param name="Level">Level.</param>
-        </member>
-        <member name="M:QuickTools.QCore.IRandom.RandomByteArray(System.Int32)">
-            <summary>
-            Create a Random Byte Array of the specified length 
-            and return it back on a byte array 
-            </summary>
-            <returns>The byte array.</returns>
-            <param name="arrayLength">Array length.</param>
-        </member>
-        <member name="M:QuickTools.QCore.IRandom.RandomByteArray(System.Int32,System.Int32,System.Int32)">
-            <summary>
-            Create a random byte array and allow you to costumice the limits of the random numbers
-            that will be into it 
-            </summary>
-            <returns>The byte array.</returns>
-            <param name="arrayLength">Array length.</param>
-            <param name="minimumRange">Minimum range.</param>
-            <param name="maximumRange">Maximum range.</param>
-        </member>
-        <member name="M:QuickTools.QCore.IRandom.RandomInt(System.Int32,System.Int32)">
-            <summary>
-            Create a random number based on the rules that are passed 
-            and retun it 
-            </summary>
-            <returns>int value</returns>
-            <param name="from">From.</param>
-            <param name="until">Until.</param>
-        </member>
-        <member name="M:QuickTools.QCore.IRandom.RandomByte">
-            <summary>
-            it generate a random byte from 0 to 250
-            and it uses the Random.Next(min,max)
-            under it for it to work 
-            </summary>
-            <returns>Single Byte</returns>
-        </member>
-        <member name="F:QuickTools.QCore.IRandom.KeyGenerated">
-            <summary>
-            This  hold the key of 16 bits already generated
-            by the RandomByteKey() generator 
-            </summary>
-        </member>
-        <member name="M:QuickTools.QCore.IRandom.RandomByteKey">
-            <summary>
-            Randoms the byte key generate a random byte key 
-            that could be used for encrypting and it has a 16 bits length
-            </summary>
-            <returns>The byte key.</returns>
-        </member>
-        <member name="M:QuickTools.QCore.IRandom.RandomByteKey(System.Boolean)">
-            <summary>
-            Randoms the byte key this works on the same way than RandomByteKey()
-            but if it is passed as argument true like RandomByteKey(true)
-            it will create a file and it will save it under the data/qt/secure.key
-            and on this version it DOES NOT ENCRYPT IT  so it has to be manually 
-            encrypted .
-            </summary>
-            <returns>byte[] array </returns>
-            <param name="autoSave">If set to <c>true</c> auto save.</param>
-        </member>
-        <member name="T:QuickTools.QCore.IConvert">
-            <summary>
-            IConvert provides a list of costums covertions methods 
-            </summary>
-        </member>
-        <member name="T:QuickTools.QCore.IConvert.ToType`1">
-            <summary>
-            This class convert some type of special methos that convert to  any type of a array to the same type of list 
-            and the same backwards 
-            </summary>
-        </member>
-        <member name="M:QuickTools.QCore.IConvert.ToType`1.ArrayToList(`0[])">
-             <summary>
-            Convert the given array type to a list with the same type 
-             </summary>
-             <returns>The to list.</returns>
-             <param name="array">Array.</param>
-        </member>
-        <member name="M:QuickTools.QCore.IConvert.ToType`1.ToList(`0[])">
-             <summary>
-            Convert the given array type to a list with the same type but this method is an static method 
-             </summary>
-             <returns>The list.</returns>
-             <param name="array">Array.</param>
-        </member>
-        <member name="M:QuickTools.QCore.IConvert.ToType`1.ListToArray(System.Collections.Generic.List{`0})">
+        <member name="F:QuickTools.QConsole.ShellInput.Notifications">
             <summary>
             
             </summary>
+        </member>
+        <member name="F:QuickTools.QConsole.ShellInput.UserBackGrondColor">
+            <summary>
+            background color from the user name 
+            </summary>
+        </member>
+        <member name="F:QuickTools.QConsole.ShellInput.UserTextColor">
+            <summary>
+            the text color of the user 
+            </summary>
+        </member>
+        <member name="F:QuickTools.QConsole.ShellInput.PathTextColor">
+            <summary>
+            the color of the text for the path 
+            </summary>
+        </member>
+        <member name="F:QuickTools.QConsole.ShellInput.PathBackGround">
+            <summary>
+            the back ground color for he path 
+            </summary>
+        </member>
+        <member name="F:QuickTools.QConsole.ShellInput.ProgramBBackGroundColor">
+            <summary>
+            Provide  the back ground of the label that display the name of the program
+            </summary>
+        </member>
+        <member name="F:QuickTools.QConsole.ShellInput.ProgramTextColor">
+            <summary>
+            Provides the color for the program label color  
+            </summary>
+        </member>
+        <member name="F:QuickTools.QConsole.ShellInput.SimbolBackGroundColor">
+            <summary>
+            the color for the simbol 
+            </summary>
+        </member>
+        <member name="F:QuickTools.QConsole.ShellInput.SimbolTextColor">
+            <summary>
+            the color for the text of the simbol 
+            </summary>
+        </member>
+        <member name="F:QuickTools.QConsole.ShellInput.AtSimbolTextColor">
+            <summary>
+            the color 
+            </summary>
+        </member>
+        <member name="F:QuickTools.QConsole.ShellInput.AtSimbolBackGroundColor">
+            <summary>
+            the background color 
+            </summary>
+        </member>
+        <member name="M:QuickTools.QConsole.ShellInput.StartInput">
+            <summary>
+            Start the shell mode 
+            </summary>
             <returns></returns>
-            <param name="list"></param>
         </member>
-        <member name="M:QuickTools.QCore.IConvert.ToType`1.ToArray(System.Collections.Generic.List{`0})">
+        <member name="M:QuickTools.QConsole.ShellInput.#ctor(System.String,System.String)">
             <summary>
-            Tos the array.
+            Initialization from the class
             </summary>
-            <returns>The array.</returns>
-            <param name="list">List.</param>
+            <param name="userName"></param>
+            <param name="machineName"></param>
         </member>
-        <member name="F:QuickTools.QCore.IConvert.ArrayJutifyer">
-            <summary>
-            This takes an sring array which is verify if it has empty spaces and it returns it back without any empty spaces
-            </summary> 
-        </member>
-        <member name="M:QuickTools.QCore.IConvert.TextToArray(System.String)">
-            <summary>
-            Converts the Text to string array 
-            </summary>
-            <returns>The to array.</returns>
-            <param name="words">Words.</param>
-        </member>
-        <member name="M:QuickTools.QCore.IConvert.BytesToString(System.Byte[])">
-            <summary>
-            Byteses to string.
-            </summary>
-            <returns>The to string.</returns>
-            <param name="array">Array.</param>
-        </member>
-        <member name="P:QuickTools.QCore.IConvert.ConvertionStatus">
-            <summary>
-            Gets or sets the convertion status.
-            </summary>
-            <value>The convertion status.</value>
-        </member>
-        <member name="M:QuickTools.QCore.IConvert.ToCharArray(System.Byte[])">
-            <summary>
-             convert bytes to a char array 
-            </summary>
-            <returns>The char array.</returns>
-            <param name="bytes">Bytes.</param>
-        </member>
-        <member name="M:QuickTools.QCore.IConvert.StringToBytesArray(System.String)">
-            <summary>
-            Strings to bytes array.
-            </summary>
-            <returns>The to bytes array.</returns>
-            <param name="rowString">Row string.</param>
-        </member>
-        <member name="T:QuickTools.QCore.Print">
-            <summary>
-            Print print a list of the array that is passed through 
-            and was created to avoid creatting forloops everywhere
-            just because .
-            </summary>
-        </member>
-        <member name="M:QuickTools.QCore.Print.List(System.Object[])">
-            <summary>
-            List the entire file array 
-            </summary>
-            <param name="array">Array.</param>
-        </member>
-        <member name="M:QuickTools.QCore.Print.List(System.Collections.Generic.List{System.String})">
-            <summary>
-            List the entire file array 
-            </summary>
-            <param name="list">Array.</param>
-        </member>
-        <member name="M:QuickTools.QCore.Print.List(System.Int32[])">
-            <summary>
-            List the entire file array 
-            </summary>
-            <param name="array">Array.</param>
-        </member>
-        <member name="M:QuickTools.QCore.Print.List(System.String[])">
-            <summary>
-            List the entire file array 
-            </summary>
-            <param name="array">Array.</param>
-        </member>
-        <member name="M:QuickTools.QCore.Print.List(System.String[],System.Boolean)">
-            <summary>
-            List the specified array and noIndexer.
-            </summary>
-            <param name="array">Array.</param>
-            <param name="noIndexer">If set to <c>true</c> no indexer.</param>
-        </member>
-        <member name="M:QuickTools.QCore.Print.List(System.Byte[])">
-            <summary>
-            List the entire file array 
-            </summary>
-            <param name="array">Array.</param>
-        </member>
-        <member name="M:QuickTools.QCore.Print.List(System.Boolean[])">
-            <summary>
-            List the entire file array 
-            </summary>
-            <param name="array">Array.</param>
-        </member>
-        <member name="M:QuickTools.QCore.Print.List(System.Double[])">
-            <summary>
-            List the entire file array 
-            </summary>
-            <param name="array">Array.</param>
+        <member name="M:QuickTools.QConsole.ShellInput.#ctor(System.String,System.String,System.String)">
+             <summary>
+            Initialize the instance 
+             </summary>
+             <param name="userName"></param>
+             <param name="machineName"></param>
+             <param name="currentPath"></param>
         </member>
         <member name="T:QuickTools.QConsole.ArrayWalker">
             <summary>
@@ -1345,24 +656,29 @@
             </summary>
             <param name="input">Input.</param>
         </member>
-        <member name="T:QuickTools.QConsole.CProgressBar">
+        <member name="T:QuickTools.QConsole.QProgressBar">
             <summary>
             Creates a ProgressBar that is used on console application
             </summary>
         </member>
-        <member name="F:QuickTools.QConsole.CProgressBar.DotsType">
+        <member name="F:QuickTools.QConsole.QProgressBar.DotsType">
             <summary>
             The type of the dots.
             </summary>
         </member>
-        <member name="M:QuickTools.QConsole.CProgressBar.Display(System.Int32,System.Int32)">
+        <member name="F:QuickTools.QConsole.QProgressBar.DotsCount">
+            <summary>
+            The dots count that will be displaid
+            </summary>
+        </member>
+        <member name="M:QuickTools.QConsole.QProgressBar.Display(System.Int32,System.Int32)">
             <summary>
             Display the specified current and goal.
             </summary>
             <param name="current">Current.</param>
             <param name="goal">Goal.</param>
         </member>
-        <member name="M:QuickTools.QConsole.CProgressBar.Display(System.Int32,System.Int32,System.String)">
+        <member name="M:QuickTools.QConsole.QProgressBar.Display(System.Int32,System.Int32,System.String)">
             <summary>
             Display the specified current, goal and dots.
             </summary>
@@ -1370,7 +686,7 @@
             <param name="goal">Goal.</param>
             <param name="dots">Dots.</param>
         </member>
-        <member name="M:QuickTools.QConsole.CProgressBar.Display(System.Int32,System.Int32,System.String,System.String)">
+        <member name="M:QuickTools.QConsole.QProgressBar.Display(System.Int32,System.Int32,System.String,System.String)">
             <summary>
             Display the specified current, goal, dots and label.
             </summary>
@@ -1379,7 +695,7 @@
             <param name="dots">Dots.</param>
             <param name="label">Label.</param>
         </member>
-        <member name="M:QuickTools.QConsole.CProgressBar.Display(System.Int32,System.Int32,System.String,System.String,System.Boolean)">
+        <member name="M:QuickTools.QConsole.QProgressBar.Display(System.Int32,System.Int32,System.String,System.String,System.Boolean)">
             <summary>
             Display the specified current, goal, dots, label and noStatusPorcent.
             </summary>
@@ -1388,62 +704,6 @@
             <param name="dots">Dots.</param>
             <param name="label">Label.</param>
             <param name="noStatusPorcent">If set to <c>true</c> no status porcent.</param>
-        </member>
-        <member name="T:QuickTools.QConsole.ArrowKey">
-            <summary>
-            This Class in sintended to improve the Options Class
-            which seems to me  really anticated  and this one provides movements
-            with all the arrow keys
-            </summary>
-        </member>
-        <member name="F:QuickTools.QConsole.ArrowKey.X">
-            <summary>
-            The x.
-            </summary>
-        </member>
-        <member name="F:QuickTools.QConsole.ArrowKey.Y">
-            <summary>
-            The y.
-            </summary>
-        </member>
-        <member name="M:QuickTools.QConsole.ArrowKey.Up">
-            <summary>
-            This fields has direct acces but as it returns an array 
-            the method GetLocation  can provide the number only in an object type 
-            </summary>
-        </member>
-        <member name="M:QuickTools.QConsole.ArrowKey.Capture(System.String)">
-            <summary>
-            Capture the specified condition.
-            </summary>
-            <param name="condition">Condition.</param>
-        </member>
-        <member name="M:QuickTools.QConsole.ArrowKey.Capture(System.String,System.Action)">
-            <summary>
-            Capture the specified condition and triguer an action 
-            </summary>
-            <param name="condition">Condition.</param>
-            <param name="triguer">Triguer.</param>
-        </member>
-        <member name="M:QuickTools.QConsole.ArrowKey.#ctor">
-            <summary>
-            Initializes a new instance of the <see cref="T:QuickTools.ArrowKey"/> class.
-            </summary>
-        </member>
-        <member name="M:QuickTools.QConsole.ArrowKey.#ctor(System.Int32,System.Int32)">
-            <summary>
-            Initializes a new instance of the <see cref="T:QuickTools.ArrowKey"/> class.
-            </summary>
-            <param name="intitialX">Intitial x.</param>
-            <param name="initialY">Initial y.</param>
-        </member>
-        <member name="M:QuickTools.QConsole.ArrowKey.#ctor(System.Int32,System.Int32,System.Boolean)">
-            <summary>
-            Initializes a new instance of the <see cref="T:QuickTools.ArrowKey"/> class.
-            </summary>
-            <param name="intitialX">Intitial x.</param>
-            <param name="initialY">Initial y.</param>
-            <param name="SwitchUpDown">If set to <c>true</c> switch up down.</param>
         </member>
         <member name="T:QuickTools.QConsole.LoopInput">
              <summary>
@@ -1531,6 +791,26 @@
             Gets a value indicating whether this <see cref="T:QuickTools.Options"/> is triguered.
             </summary>
             <value><c>true</c> if triguered; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="F:QuickTools.QConsole.Options.TextColor">
+            <summary>
+            The color of the text.
+            </summary>
+        </member>
+        <member name="F:QuickTools.QConsole.Options.BackColor">
+            <summary>
+            The color of the back.
+            </summary>
+        </member>
+        <member name="F:QuickTools.QConsole.Options.LabelBackColor">
+            <summary>
+            The color of the label back.
+            </summary>
+        </member>
+        <member name="F:QuickTools.QConsole.Options.LabelTextColor">
+            <summary>
+            The color of the label text.
+            </summary>
         </member>
         <member name="M:QuickTools.QConsole.Options.ClearOptions">
             <summary>
@@ -1793,6 +1073,1171 @@
             Initializes a new instance of the <see cref="T:QuickTools.QInput"/> class.
             </summary>
         </member>
+        <member name="T:QuickTools.QCore.Get">
+            <summary>
+            Get The bigest class In Quicktools
+            does multiple stuff and contains must of the 
+            tools that started this Project.
+            </summary>
+        </member>
+        <member name="M:QuickTools.QCore.Get.Ls(System.String)">
+            <summary>
+            Allows To navigate throug directories and at the end could return the data colected at given directory
+            </summary>
+            <param name="path"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QuickTools.QCore.Get.Ls(System.String,System.String)">
+            <summary>
+            Allows To navigate throug directories and at the end could return the data colected at given directory
+            </summary>
+            <param name="path"></param>
+            <param name="dateFormat"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QuickTools.QCore.Get.MatchFileExtention(System.String,System.String)">
+            <summary>
+            trys to match the file type extention
+            </summary>
+            <param name="file"></param>
+            <param name="test"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QuickTools.QCore.Get.Ls(System.String,System.String,System.Boolean)">
+            <summary>
+            only prints the one that meet the type 
+            </summary>
+            <param name="path"></param>
+            <param name="printType"></param>
+            <param name="printOnlyType"></param>
+        </member>
+        <member name="M:QuickTools.QCore.Get.Print(System.Object,System.Object)">
+            <summary>
+            Gets a value printed with it's key 
+            </summary>
+            <param name="key"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:QuickTools.QCore.Get.PrintSystemVars(System.Collections.IDictionary)">
+            <summary>
+            Prints the system variables given to it 
+            </summary>
+            <param name="variables"></param>
+        </member>
+        <member name="M:QuickTools.QCore.Get.PrintSystemVars(System.Collections.IDictionary,System.String)">
+            <summary>
+            Prints the system variables given to it and save them on a given file
+            </summary>
+            <param name="variables"></param>
+            <param name="fileToSaveThem"></param>
+        </member>
+        <member name="M:QuickTools.QCore.Get.FilterOnlyChars(System.String)">
+            <summary>
+            Very Slow method that only allows chars  to be print
+            </summary>
+            <returns>The chars.</returns>
+            <param name="word">Word.</param>
+        </member>
+        <member name="M:QuickTools.QCore.Get.Break">
+            <summary>
+            Breaks any given loop by throwing an exception that if is not handled could throw an exception saying that the task failed sucessfully LOL
+            <see cref="M:System.Exception.#ctor"/>
+            </summary>
+        </member>
+        <member name="M:QuickTools.QCore.Get.Break(System.Object)">
+            <summary>
+            Breaks any given loop by throwing an exception that if is not handled could throw an exception saying that the task failed sucessfully LOL
+            <see cref="M:System.Exception.#ctor"/>
+            </summary>
+            <param name="message">Message.</param>
+        </member>
+        <member name="M:QuickTools.QCore.Get.Loop(System.Action)">
+            <summary>
+            Loop the specified actionMethod forever or until an exception happens usually 
+            could be also ended when forced by <see cref="M:QuickTools.QCore.Get.Break"/>
+            </summary>
+            <param name="actionMethod">Action method.</param>
+        </member>
+        <member name="M:QuickTools.QCore.Get.Status(System.Object,System.Object)">
+            <summary>
+            Get the porcenrage status of the provided current time and goal 
+            </summary>
+            <returns>The status.</returns>
+            <param name="current">Current.</param>
+            <param name="goal">Goal.</param>
+        </member>
+        <member name="M:QuickTools.QCore.Get.StatusNumber(System.Object,System.Object)">
+            <summary>
+            Get the porcenrage status of the provided current time and goal 
+            </summary>
+            <param name="current"></param>
+            <param name="goal"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QuickTools.QCore.Get.Line">
+            <summary>
+            Returns a line divition using the Enviroment.NewLine command. 
+            </summary>
+            <returns>The corresponding line for the console</returns>
+        </member>
+        <member name="M:QuickTools.QCore.Get.HashCode(System.Byte[])">
+            <summary>
+            This Creates a hash code based on the given input 
+            be carefull using this as a security method since 
+            this macanisim is too simple and it could be broken easely
+            </summary>
+            <returns>The code.</returns>
+            <param name="bytes">Bytes.</param>
+        </member>
+        <member name="M:QuickTools.QCore.Get.HashCode256(System.Byte[])">
+            <summary>
+            Hashs the code256.
+            </summary>
+            <returns>The code256.</returns>
+            <param name="bytes">Bytes.</param>
+        </member>
+        <member name="M:QuickTools.QCore.Get.HashCode256(System.Object)">
+            <summary>
+            Hashs the code256.
+            </summary>
+            <returns>The code256.</returns>
+            <param name="content">Content.</param>
+        </member>
+        <member name="M:QuickTools.QCore.Get.HashCode(System.String,System.Int32)">
+            <summary>
+            This has the same level of security of <see cref="M:QuickTools.QCore.Get.HashCode(System.String)"/>
+            which measn that is not secure enough so if you need encription
+            please refer to <see cref="T:QuickTools.QSecurity.Secure"/>
+            </summary>
+            <param name="text"></param>
+            <param name="length"></param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:QuickTools.QCore.Get.HashCode(System.String)">
+            <summary>   
+            This Creates a hash code based on the given input 
+            be carefull using this as a security method since 
+            this macanisim is too simple and it could be broken easely
+            </summary>
+            <returns>The code.</returns>
+            <param name="text">Text.</param>
+        </member>
+        <member name="M:QuickTools.QCore.Get.WaitTime(System.Int32)">
+            <summary>
+            WaitTime basically is an abstraction of 
+            System.Threading.Sleep(<paramref name="milliSecondsOrseconds"/>);
+            and it basically wait the time in it , it also 
+            contains a try catch just in case if something fails
+            </summary>
+            <param name="milliSecondsOrseconds">Sleep time.</param>
+        </member>
+        <member name="M:QuickTools.QCore.Get.WaitTime">
+            <summary>
+            Does the same than the waittime with no param 
+            but this only wait or sleep 1000 milliseconds 
+            </summary>
+        </member>
+        <member name="M:QuickTools.QCore.Get._(System.Int32)">
+            <summary>
+            This does the same thing than WaitTime with param but it actually
+            has a different name 
+            </summary>
+            <param name="sleepTime">Sleep time.</param>
+        </member>
+        <member name="M:QuickTools.QCore.Get.CurrentPath">
+            <summary>
+            This method Returns the current path from the application
+            </summary>
+            <returns>Returns the current path</returns>
+        </member>
+        <member name="F:QuickTools.QCore.Get.Path">
+            <summary>
+            Abstraction for Directory.GetCurrentDirectory(); 
+            returns the current string path 
+            </summary>
+        </member>
+        <member name="M:QuickTools.QCore.Get.DataPath">
+            <summary>
+            This method Create a folder inside the root of the program
+            and create a folder that can be use for the program 
+            it work like this ProgramRoot/data/qt/...
+            also if the program has a folder that is already called data
+            it will not override it 
+            </summary>
+            <returns>string path </returns>
+        </member>
+        <member name="M:QuickTools.QCore.Get.RemoveFileNameExtention(System.String)">
+            <summary>
+            Removes the file name extention.
+            </summary>
+            <returns>The file name extention.</returns>
+            <param name="fileName">File name.</param>
+        </member>
+        <member name="M:QuickTools.QCore.Get.FileNameFromPath(System.String)">
+            <summary>
+            Gets the Files  name from the path.
+            </summary>
+            <returns>The name from path.</returns>
+            <param name="path">Path.</param>
+        </member>
+        <member name="M:QuickTools.QCore.Get.FileExention(System.String)">
+            <summary>
+            Gets the file extention and returns it back
+            </summary>
+            <param name="file"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QuickTools.QCore.Get.FolderFromPath(System.String)">
+            <summary>
+            Gets the path from the given file 
+            </summary>
+            <returns>The from path.</returns>
+            <param name="path">Path.</param>
+        </member>
+        <member name="M:QuickTools.QCore.Get.RelativePath(System.String)">
+            <summary>
+            Gets the relative path from the given path by taking your current path in consideration
+            </summary>
+            <param name="path"></param>
+            <returns>the relative path string </returns>
+        </member>
+        <member name="M:QuickTools.QCore.Get.IsDriveChar(System.String)">
+            <summary>
+            Checks if the path given looks like a drive letter on windwos 
+            </summary>
+            <param name="path"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QuickTools.QCore.Get.RelativePath(System.String,System.String)">
+            <summary>
+            Gets the relative path from the given path by taking your current path in consideration
+            </summary>
+            <param name="path"></param>
+            <returns>the relative path string </returns>
+        </member>
+        <member name="M:QuickTools.QCore.Get.FixPath(System.String)">
+            <summary>
+            This method allows you to get the clear path fixed to the operating system that you 
+            are working with in this case windows and linux are the only one  that this has being tested 
+            </summary>
+            <param name="path"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QuickTools.QCore.Get.DataPath(System.String)">
+            <summary>
+            Create a data path if is not created and creates the directory given as a parameter
+            </summary>
+            <returns></returns>
+            <param name="newDirectory"></param>
+        </member>
+        <member name="M:QuickTools.QCore.Get.SaveKey">
+            <summary>
+            This method can used manually
+            or automatically 
+            by calling directly the RandomByteKey(true); 
+            and adding the parameter the bool true 
+            for it to auto save the key 
+            </summary>
+        </member>
+        <member name="M:QuickTools.QCore.Get.SaveKey(System.String)">
+            <summary>
+            Save the key Generated on the given path 
+            </summary>
+            <param name="pathToSaveTheKey">Path to save the key.</param>
+        </member>
+        <member name="M:QuickTools.QCore.Get.KeyBytesSaved">
+            <summary>
+            This Method gets the key bytes that were saved before by using the method 
+            before that was the method save key 
+            </summary>
+            <returns>The bytes saved.</returns>
+        </member>
+        <member name="M:QuickTools.QCore.Get.KeyBytesSaved(System.String)">
+            <summary>
+            Read the string bytes stored in a file 
+            </summary>
+            <returns>The bytes saved.</returns>
+            <param name="path">Path.</param>
+        </member>
+        <member name="M:QuickTools.QCore.Get.Check">
+            <summary>
+             This basically just check if a name could be a valid
+            name for a file in windows mainly and it 
+            returns true if the check it is correct 
+            </summary>
+            <returns>True or False</returns>
+        </member>
+        <member name="F:QuickTools.QCore.Get.Text">
+            <summary>
+            Return the text taken by any of the fallowing 
+            Get.Input()
+            Get.InputText(); 
+            </summary>
+        </member>
+        <member name="F:QuickTools.QCore.Get.Number">
+            <summary>
+            Returns the Number taken by the fallowing
+            Get.Input();
+            Get.NumberInput(); 
+            </summary>
+        </member>
+        <member name="F:QuickTools.QCore.Get.input">
+            <summary>
+             Returns the text taken by
+             Get.Input();
+             </summary>           
+        </member>
+        <member name="F:QuickTools.QCore.Get.Key">
+            <summary>
+             Returns the Key from  the Get.KeyInput()
+             method 
+            </summary>           
+        </member>
+        <member name="P:QuickTools.QCore.Get.Char">
+            <summary>
+            Gets or sets the char.
+            </summary>
+            <value>The char.</value>
+        </member>
+        <member name="P:QuickTools.QCore.Get.Modifier">
+            <summary>
+            Gets or sets the modifier.
+            </summary>
+            <value>The modifier.</value>
+        </member>
+        <member name="M:QuickTools.QCore.Get.KeyInput">
+            <summary>
+            Keies the input.
+            </summary>
+            <returns>The input.</returns>
+        </member>
+        <member name="M:QuickTools.QCore.Get.InputArray">
+            <summary>
+            Get the Input as an array the array.
+            </summary>
+            <returns>The array.</returns>
+        </member>
+        <member name="M:QuickTools.QCore.Get.InputArray(System.Object)">
+            <summary>
+            Get the Input as an array the array.
+            </summary>
+            <returns>The array.</returns>
+            <param name="label">Label.</param>
+        </member>
+        <member name="F:QuickTools.QCore.Get.InputChar">
+            <summary>
+            This is the char that is located at the biggining of the 
+            Get.Input() method and it has to be added a method where
+            it will save the char if is changed
+            </summary>
+        </member>
+        <member name="T:QuickTools.QCore.Get.InputType">
+            <summary>
+            Input type.
+            </summary>
+        </member>
+        <member name="P:QuickTools.QCore.Get.InputType.Text">
+            <summary>
+            Gets or sets the text.
+            </summary>
+            <value>The text.</value>
+        </member>
+        <member name="P:QuickTools.QCore.Get.InputType.Number">
+            <summary>
+            Gets or sets the number.
+            </summary>
+            <value>The number.</value>
+        </member>
+        <member name="P:QuickTools.QCore.Get.InputType.Bool">
+            <summary>
+            Gets or sets a value indicating whether this <see cref="T:QuickTools.Get.InputType"/> is bool.
+            </summary>
+            <value><c>true</c> if bool; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="M:QuickTools.QCore.Get.InputType.ToString">
+            <summary>
+            Returns a <see cref="T:System.String"/> that represents the current <see cref="T:QuickTools.Get.InputType"/>.
+            </summary>
+            <returns>A <see cref="T:System.String"/> that represents the current <see cref="T:QuickTools.Get.InputType"/>.</returns>
+        </member>
+        <member name="M:QuickTools.QCore.Get.Input">
+            <summary>
+            This Method Get the input from the keyboard
+            and it returns an object and is an implementation 
+            </summary>
+            <returns>The input.</returns>
+        </member>
+        <member name="M:QuickTools.QCore.Get.Input(System.String)">
+            <summary>
+            This Method does the same as Input() without any 
+            arguments but with the only diference that the char
+            on the side at the bigging could be edited 
+            like Get.Input("Write Your Name");.
+            </summary>
+            <returns>The input.</returns>
+            <param name="display">Display.</param>
+        </member>
+        <member name="M:QuickTools.QCore.Get.IsNumber(System.Object)">
+            <summary>
+            This is a very generic Number Checker
+            that veryfied if the input passed as an argument
+            could be a number or not and it returns
+            true or false if is or not a number
+            </summary>
+            <returns>Retursn True or False if is number : True if is not a number returns: false</returns>
+            <param name="input">Input.</param>
+        </member>
+        <member name="M:QuickTools.QCore.Get.NumberInput">
+            <summary>
+            Get the Number from the input introduced 
+            </summary>
+            <returns>The input.</returns>
+        </member>
+        <member name="M:QuickTools.QCore.Get.NumberInput(System.Boolean)">
+            <summary>
+            Get a number in put and returns a double 
+            </summary>
+            <returns>The input.</returns>
+            <param name="BigNumber">If set to <c>true</c> big number.</param>
+        </member>
+        <member name="M:QuickTools.QCore.Get.Reset">
+            <summary>
+            Shortcut for Console.Reset(); 
+            </summary>
+        </member>
+        <member name="M:QuickTools.QCore.Get.Clear">
+            <summary>
+            Clear the console
+            </summary>
+        </member>
+        <member name="M:QuickTools.QCore.Get.Clear(System.Boolean)">
+            <summary>
+            This method started as a shurtcut from <see cref="M:System.Console.Clear"/>
+            But not any longer this method now Clear every single <see cref="T:System.Char"/>
+            in the console and uses inside to for loops and as reference to get the widows size <see cref="P:System.Console.BufferWidth"/>
+            and <see cref="P:System.Console.BufferHeight"/> and to remove the chars <see cref="M:System.Console.SetCursorPosition(System.Int32,System.Int32)"/>
+            </summary>
+            <param name="F">If set to <c>true</c> f.</param>
+        </member>
+        <member name="M:QuickTools.QCore.Get.ClearAfter(System.Object)">
+            <summary>
+            Clears the after the content given 
+            </summary>
+            <param name="content">Content.</param>
+        </member>
+        <member name="M:QuickTools.QCore.Get.Label(System.Object,System.ConsoleColor,System.ConsoleColor)">
+            <summary>
+            Label the specified msg, backColor and foreColor.
+            </summary>
+            <param name="msg">Message.</param>
+            <param name="backColor">Back color.</param>
+            <param name="foreColor">Fore color.</param>
+        </member>
+        <member name="M:QuickTools.QCore.Get.Label(System.Object)">
+            <summary>
+            Write text with background color in color magentaand some space around it 
+            and seems like a type of a label and takes an argument of an object to avoid casting
+            </summary>
+            <param name="msg">Message.</param>
+        </member>
+        <member name="M:QuickTools.QCore.Get.LabelSide(System.Object)">
+            <summary>
+            simmilar to Console.Write
+            but prints to the console a text on magenta
+            </summary>
+            <param name="msg">Message content</param>
+        </member>
+        <member name="M:QuickTools.QCore.Get.LabelSingle(System.Object)">
+            <summary>
+            Print Text on the side of the console using Console.Write
+            and gives it a Magenta color 
+            </summary>
+            <param name="msg">Message.</param>
+        </member>
+        <member name="M:QuickTools.QCore.Get.Title(System.Object)">
+            <summary>
+            Console.Title implementation 
+            </summary>
+            <param name="msg">Message.</param>
+        </member>
+        <member name="M:QuickTools.QCore.Get.Title(System.Object,System.Int32)">
+            <summary>
+            Console.WriteLine(object) implementation with \n to give the text more space
+            to the right 
+            </summary>
+            <param name="msg">Message.</param>
+            <param name="tabs">Tabs.</param>
+        </member>
+        <member name="M:QuickTools.QCore.Get.Box(System.Object)">
+            <summary>
+            Box the specified content.
+            </summary>
+            <param name="content">Content.</param>
+        </member>
+        <member name="M:QuickTools.QCore.Get.Box(System.Object,System.Object)">
+            <summary>
+            Box the specified content and simbol.
+            </summary>
+            <param name="content">Content.</param>
+            <param name="simbol">Simbol.</param>
+        </member>
+        <member name="M:QuickTools.QCore.Get.Box(System.Object,System.Int32)">
+            <summary>
+            Box the specified content and tabs.
+            </summary>
+            <param name="content">Content.</param>
+            <param name="tabs">Tabs.</param>
+        </member>
+        <member name="M:QuickTools.QCore.Get.Box(System.Object,System.String,System.Int32)">
+            <summary>
+            Box the specified content, simbol and tabs.
+            </summary>
+            <param name="content">Content.</param>
+            <param name="simbol">Simbol.</param>
+            <param name="tabs">Tabs.</param>
+        </member>
+        <member name="M:QuickTools.QCore.Get.Wrong(System.Object)">
+            <summary>
+            Write Text with Console.WriteLine add red color and wait for a key to be pressed 
+            </summary>
+            <param name="text">Text.</param>
+        </member>
+        <member name="M:QuickTools.QCore.Get.WrongIn(System.Object)">
+            <summary>
+            Write Text with Console.WriteLine add red color and wait for a key to be pressed 
+            </summary>
+            <param name="msg">Message.</param>
+        </member>
+        <member name="M:QuickTools.QCore.Get.WrongInput(System.Object)">
+            <summary>
+            Write Text with Console.WriteLine add red color and wait for a key to be pressed 
+            </summary>
+            <param name="msg">Message.</param>
+        </member>
+        <member name="M:QuickTools.QCore.Get.Password">
+            <summary>
+            Gets an input without showing it on the screen
+            </summary>
+            <returns>The password.</returns>
+        </member>
+        <member name="M:QuickTools.QCore.Get.NotFound(System.Object)">
+            <summary>
+            Alert Not found write the file that was not founded and print it on color red
+            </summary>
+            <param name="msg">Message.</param>
+        </member>
+        <member name="M:QuickTools.QCore.Get.Wait">
+            <summary>
+            Wait for a key to be pressed 
+            </summary>
+        </member>
+        <member name="M:QuickTools.QCore.Get.Wait(System.Object)">
+            <summary>
+            Very similar to Console.ReadKey
+            but it has some content added to display
+            the Text from it and is basically used
+            to display the text witout closing the console
+            in some cases the console will close to quickly 
+            </summary>
+            <param name="Caller">Text Needed to be printed</param>
+        </member>
+        <member name="M:QuickTools.QCore.Get.Ok">
+            <summary>
+            Literally Print a line saying ok 
+            on color green 
+            </summary>
+        </member>
+        <member name="M:QuickTools.QCore.Get.Ok(System.Int32)">
+            <summary>
+            This is just used when you need to see if some logic is working as spected
+            so each ok number provide a different color and each of them are from 0 to 4 
+            and the colors available are (Green 0, Yellow 1, Blue 2,  Red 3, Cyan 4)
+            </summary>
+            <param name="colorNumber">Color number.</param>
+        </member>
+        <member name="M:QuickTools.QCore.Get.Bytes(System.Object)">
+            <summary>
+            gets the Bytes of the specified Object.
+            </summary>
+            <returns>The bytes.</returns>
+            <param name="Object">Object.</param>
+        </member>
+        <member name="M:QuickTools.QCore.Get.Alert(System.Object)">
+            <summary>
+            Similar to Console.WriteLine(object); 
+            but add a box of color yellow saying alert
+            and the fallowing text that is pass as an argument
+            will be printed on yellow color 
+            </summary>
+            <param name="msg">Message Content</param>
+        </member>
+        <member name="M:QuickTools.QCore.Get.Hide">
+            <summary>
+            this is a very smallintent of  trying to hide the password
+            while is being pressed 
+            </summary>
+        </member>
+        <member name="M:QuickTools.QCore.Get.HideText">
+            <summary>
+            This try to hide the text
+            </summary>
+        </member>
+        <member name="M:QuickTools.QCore.Get.W(System.Object)">
+            <summary>
+            Console.WriteLine(object) shurtcut
+            </summary>
+            <param name="text">Text.</param>
+        </member>
+        <member name="M:QuickTools.QCore.Get.WL(System.Object)">
+            <summary>
+            Write to the console the given text
+            </summary>
+            <param name="text">Text.</param>
+        </member>
+        <member name="M:QuickTools.QCore.Get.WriteL(System.Object)">
+            <summary>
+            Writes the line
+            </summary>
+            <param name="text">Text.</param>
+        </member>
+        <member name="M:QuickTools.QCore.Get.Write(System.Object,System.Int32)">
+            <summary>
+            Write the specified text and tabs.
+            </summary>
+            <param name="text">Text.</param>
+            <param name="tabs">Tabs.</param>
+        </member>
+        <member name="M:QuickTools.QCore.Get.Write(System.Object)">
+            <summary>
+            Write the specified value.
+            </summary>
+            <param name="value">Value.</param>
+        </member>
+        <member name="M:QuickTools.QCore.Get.About">
+               public static string Version = "A032022";
+               private static string lastModified = "03/23/2022";
+            
+            <summary>
+            This Print QuickTools logo to the console , not really useful , but looks cool . 
+            </summary>
+        </member>
+        <member name="T:QuickTools.QCore.Get.SizeType">
+            <summary>
+            Size type.
+            </summary>
+        </member>
+        <member name="F:QuickTools.QCore.Get.SizeType.GB">
+            <summary>
+            gigabyte
+            </summary>
+        </member>
+        <member name="F:QuickTools.QCore.Get.SizeType.MB">
+            <summary>
+            megabyte
+            </summary>
+        </member>
+        <member name="F:QuickTools.QCore.Get.SizeType.KB">
+            <summary>
+            kilobyte
+            </summary>
+        </member>
+        <member name="F:QuickTools.QCore.Get.SizeType.B">
+            <summary>
+            byte
+            </summary>
+        </member>
+        <member name="M:QuickTools.QCore.Get.FileSize(System.String,QuickTools.QCore.Get.SizeType)">
+            <summary>
+            Files the size.
+            </summary>
+            <returns>The size.</returns>
+            <param name="fileName">File name.</param>
+            <param name="size">Size.</param>
+        </member>
+        <member name="M:QuickTools.QCore.Get.FileSize(System.String)">
+            <summary>
+            gets Files the size.
+            </summary>
+            <returns>The size.</returns>
+            <param name="fileName">File name.</param>
+        </member>
+        <member name="M:QuickTools.QCore.Get.FileSize(System.Byte[])">
+            <summary>
+            Gets the size fo a file from the buffer
+            </summary>
+            <returns>The size.</returns>
+            <param name="buffer">Buffer.</param>
+        </member>
+        <member name="T:QuickTools.QCore.Check">
+            <summary>
+            This is an abstraction of Stoop Watch which provide some functionalities from the same class
+            </summary>
+        </member>
+        <member name="P:QuickTools.QCore.Check.Seconds">
+            <summary>
+            Gets or sets the seconds.
+            </summary>
+            <value>The seconds.</value>
+        </member>
+        <member name="P:QuickTools.QCore.Check.Minutes">
+            <summary>
+            Gets or sets the minutes.
+            </summary>
+            <value>The minutes.</value>
+        </member>
+        <member name="P:QuickTools.QCore.Check.Milliseconds">
+            <summary>
+            Gets or sets the milliseconds.
+            </summary>
+            <value>The milliseconds.</value>
+        </member>
+        <member name="M:QuickTools.QCore.Check.Start">
+            <summary>
+            Start this instance.
+            </summary>
+        </member>
+        <member name="M:QuickTools.QCore.Check.Stop">
+            <summary>
+            Stop this instance.
+            </summary>
+            <returns>The stop.</returns>
+        </member>
+        <member name="M:QuickTools.QCore.Check.ToString">
+            <summary>
+            Returns a <see cref="T:System.String"/> that represents the current <see cref="T:QuickTools.Check"/>.
+            </summary>
+            <returns>A <see cref="T:System.String"/> that represents the current <see cref="T:QuickTools.Check"/>.</returns>
+        </member>
+        <member name="M:QuickTools.QCore.Check.Dispose(System.Boolean)">
+            <summary>
+            Dispose the specified disposing.
+            </summary>
+            <param name="disposing">If set to <c>true</c> disposing.</param>
+        </member>
+        <member name="M:QuickTools.QCore.Check.Dispose">
+            <summary>
+            Releases all resource used by the <see cref="T:QuickTools.QCore.Check"/> object.
+            </summary>
+        </member>
+        <member name="T:QuickTools.QCore.Do">
+            <summary>
+            Extention Of Get Due to Old Programs using this abstraction
+            </summary>
+        </member>
+        <member name="T:QuickTools.QCore.IRandom">
+            <summary>
+            The class new it is the one who will containe multiple methodthat will handle new random data 
+            The name was changed due to making more sence if is called like 
+            and you know what i will create  another class just because 
+            that could be called on the same maner 
+            </summary>
+        </member>
+        <member name="F:QuickTools.QCore.IRandom.Generated">
+            <summary>
+            Contains the password Generated 
+            </summary>
+        </member>
+        <member name="F:QuickTools.QCore.IRandom.LowerCase">
+            <summary>
+            Array Of Words LowerCase
+            </summary>
+        </member>
+        <member name="F:QuickTools.QCore.IRandom.UpperCase">
+            <summary>
+            Array Of Words Upercase
+            </summary>
+        </member>
+        <member name="F:QuickTools.QCore.IRandom.Symbols">
+            <summary>
+            Array Of Symbols
+            </summary>
+        </member>
+        <member name="M:QuickTools.QCore.IRandom.Password">
+            <summary>
+            Generate a Random Passord with a max 9 digits
+            </summary>
+            <returns>The password.</returns>
+        </member>
+        <member name="M:QuickTools.QCore.IRandom.Password(System.Int32,System.Boolean)">
+            <summary>
+            Password the specified passwordLenght and noSpecialSimbols.
+            </summary>
+            <returns>The password.</returns>
+            <param name="passwordLenght">Password lenght.</param>
+            <param name="noSpecialSimbols">If set to <c>true</c> no special simbols.</param>
+        </member>
+        <member name="F:QuickTools.QCore.IRandom.RandomTextCounter">
+            <summary>
+            The random text counter.
+            </summary>
+        </member>
+        <member name="M:QuickTools.QCore.IRandom.RandomText(System.Double)">
+            <summary>
+            Generat Randoms text completly chunked together useful to create random passwords or anything that requires a long string of text.
+            </summary>
+            <returns>The text.</returns>
+            <param name="textLength">Text length.</param>
+        </member>
+        <member name="M:QuickTools.QCore.IRandom.RandomText(System.Double,System.Action)">
+            <summary>
+            Randoms the text.
+            </summary>
+            <returns>The text.</returns>
+            <param name="textLength">Text length.</param>
+            <param name="callBack">Call back.</param>
+        </member>
+        <member name="M:QuickTools.QCore.IRandom.Password(System.Int32)">
+            <summary>
+            Password the specified passwordLenght.
+            </summary>
+            <returns>The password.</returns>
+            <param name="passwordLenght">Password lenght.</param>
+        </member>
+        <member name="F:QuickTools.QCore.IRandom.pin">
+            <summary>
+            The pin generated
+            </summary>
+        </member>
+        <member name="M:QuickTools.QCore.IRandom.Pin">
+            <summary>
+            This Method create a random pin of 4 digits and return it 
+            </summary>
+            <returns>The pin.</returns>
+        </member>
+        <member name="M:QuickTools.QCore.IRandom.Pin(System.Int32)">
+            <summary>
+            Create a pin of the specified length.
+            </summary>
+            <returns>The pin.</returns>
+            <param name="Level">Level.</param>
+        </member>
+        <member name="M:QuickTools.QCore.IRandom.RandomByteArray(System.Int32)">
+            <summary>
+            Create a Random Byte Array of the specified length 
+            and return it back on a byte array 
+            </summary>
+            <returns>The byte array.</returns>
+            <param name="arrayLength">Array length.</param>
+        </member>
+        <member name="M:QuickTools.QCore.IRandom.RandomByteArray(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Create a random byte array and allow you to costumice the limits of the random numbers
+            that will be into it 
+            </summary>
+            <returns>The byte array.</returns>
+            <param name="arrayLength">Array length.</param>
+            <param name="minimumRange">Minimum range.</param>
+            <param name="maximumRange">Maximum range.</param>
+        </member>
+        <member name="M:QuickTools.QCore.IRandom.RandomInt(System.Int32,System.Int32)">
+            <summary>
+            Create a random number based on the rules that are passed 
+            and retun it 
+            </summary>
+            <returns>int value</returns>
+            <param name="from">From.</param>
+            <param name="until">Until.</param>
+        </member>
+        <member name="M:QuickTools.QCore.IRandom.RandomByte">
+            <summary>
+            it generate a random byte from 0 to 250
+            and it uses the Random.Next(min,max)
+            under it for it to work 
+            </summary>
+            <returns>Single Byte</returns>
+        </member>
+        <member name="F:QuickTools.QCore.IRandom.KeyGenerated">
+            <summary>
+            This  hold the key of 16 bits already generated
+            by the RandomByteKey() generator 
+            </summary>
+        </member>
+        <member name="M:QuickTools.QCore.IRandom.RandomByteKey">
+            <summary>
+            Randoms the byte key generate a random byte key 
+            that could be used for encrypting and it has a 16 bits length
+            </summary>
+            <returns>The byte key.</returns>
+        </member>
+        <member name="M:QuickTools.QCore.IRandom.RandomByteKey(System.Boolean)">
+            <summary>
+            Randoms the byte key this works on the same way than RandomByteKey()
+            but if it is passed as argument true like RandomByteKey(true)
+            it will create a file and it will save it under the data/qt/secure.key
+            and on this version it DOES NOT ENCRYPT IT  so it has to be manually 
+            encrypted .
+            </summary>
+            <returns>byte[] array </returns>
+            <param name="autoSave">If set to <c>true</c> auto save.</param>
+        </member>
+        <member name="T:QuickTools.QCore.IConvert">
+            <summary>
+            IConvert provides a list of costums covertions methods 
+            </summary>
+        </member>
+        <member name="T:QuickTools.QCore.IConvert.ToType`1">
+            <summary>
+            This class convert some type of special methos that convert to  any type of a array to the same type of list 
+            and the same backwards 
+            </summary>
+        </member>
+        <member name="F:QuickTools.QCore.IConvert.ToType`1.ArrayJutifyer">
+            <summary>
+            This method mekes sure that there is no value that 
+            is returned that is empty 
+            </summary>
+        </member>
+        <member name="M:QuickTools.QCore.IConvert.ToType`1.ArrayToList(`0[])">
+             <summary>
+            Convert the given array type to a list with the same type 
+             </summary>
+             <returns>The to list.</returns>
+             <param name="array">Array.</param>
+        </member>
+        <member name="M:QuickTools.QCore.IConvert.ToType`1.ToList(`0[])">
+             <summary>
+            Convert the given array type to a list with the same type but this method is an static method 
+             </summary>
+             <returns>The list.</returns>
+             <param name="array">Array.</param>
+        </member>
+        <member name="M:QuickTools.QCore.IConvert.ToType`1.ListToArray(System.Collections.Generic.List{`0})">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+            <param name="list"></param>
+        </member>
+        <member name="M:QuickTools.QCore.IConvert.ToType`1.ToArray(System.Collections.Generic.List{`0})">
+            <summary>
+            Tos the array.
+            </summary>
+            <returns>The array.</returns>
+            <param name="list">List.</param>
+        </member>
+        <member name="F:QuickTools.QCore.IConvert.ArrayJutifyer">
+            <summary>
+            This takes an sring array which is verify if it has empty spaces and it returns it back without any empty spaces
+            </summary> 
+        </member>
+        <member name="M:QuickTools.QCore.IConvert.TextToArray(System.String)">
+            <summary>
+            Converts the Text to string array 
+            </summary>
+            <returns>The to array.</returns>
+            <param name="words">Words.</param>
+        </member>
+        <member name="M:QuickTools.QCore.IConvert.ArrayToText(System.String[])">
+            <summary>
+            Creates a row string with space in between of words to devide each word from the array
+            </summary>
+            <param name="arrayOfWords"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QuickTools.QCore.IConvert.BytesToString(System.Byte[])">
+            <summary>
+            Converts the bytes given to a row string of bytes but is slow 
+            </summary>
+            <returns>The to string.</returns>
+            <param name="array">Array.</param>
+        </member>
+        <member name="M:QuickTools.QCore.IConvert.BytesToString(System.Byte[],System.Boolean)">
+            <summary>
+            Converts the bytes given to a row string of bytes but is slow if showDebuger is equal to true it will print the status of the buffer to the console
+            </summary>
+            <returns>The to string.</returns>
+            <param name="array">Array.</param>
+            <param name="showDebuger">If set to <c>true</c> show debuger.</param>
+        </member>
+        <member name="M:QuickTools.QCore.IConvert.ToASCII(System.Object)">
+            <summary>
+            Converts To the ASCII encuding
+            </summary>
+            <returns>The ASCII.</returns>
+            <param name="content">Content.</param>
+        </member>
+        <member name="M:QuickTools.QCore.IConvert.ToString(System.Byte[])">
+            <summary>
+            Convert to string the given bytes 
+            </summary>
+            <returns>The string.</returns>
+            <param name="content">Content.</param>
+        </member>
+        <member name="M:QuickTools.QCore.IConvert.ToText(System.String)">
+            <summary>
+            Gets a text arrray  like 200,2,4,5,0 and convert it into it's equivalent in text 
+            </summary>
+            <param name="array"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QuickTools.QCore.IConvert.ToText(System.String,System.Boolean)">
+            <summary>
+            Gets a text arrray  like 200,2,4,5,0 and convert it into it's equivalent in text 
+            </summary>
+            <param name="array"></param>
+            <param name="debugger"></param>
+            <returns></returns>
+        </member>
+        <member name="P:QuickTools.QCore.IConvert.ConvertionStatus">
+            <summary>
+            Gets or sets the convertion status.
+            </summary>
+            <value>The convertion status.</value>
+        </member>
+        <member name="M:QuickTools.QCore.IConvert.ToCharArray(System.Byte[])">
+            <summary>
+             convert bytes to a char array 
+            </summary>
+            <returns>The char array.</returns>
+            <param name="bytes">Bytes.</param>
+        </member>
+        <member name="M:QuickTools.QCore.IConvert.StringToBytesArray(System.String)">
+            <summary>
+            Strings to bytes array.
+            </summary>
+            <returns>The to bytes array.</returns>
+            <param name="rowString">Row string.</param>
+        </member>
+        <member name="T:QuickTools.QCore.Print">
+            <summary>
+            Print print a list of the array that is passed through 
+            and was created to avoid creatting forloops everywhere
+            just because .
+            </summary>
+        </member>
+        <member name="M:QuickTools.QCore.Print.List(System.Object[])">
+            <summary>
+            List the entire file array 
+            </summary>
+            <param name="array">Array.</param>
+        </member>
+        <member name="M:QuickTools.QCore.Print.List(System.Collections.Generic.List{System.String})">
+            <summary>
+            List the entire file array 
+            </summary>
+            <param name="list">Array.</param>
+        </member>
+        <member name="M:QuickTools.QCore.Print.List(System.Int32[])">
+            <summary>
+            List the entire file array 
+            </summary>
+            <param name="array">Array.</param>
+        </member>
+        <member name="M:QuickTools.QCore.Print.List(System.String[])">
+            <summary>
+            List the entire file array 
+            </summary>
+            <param name="array">Array.</param>
+        </member>
+        <member name="M:QuickTools.QCore.Print.List(System.String[],System.Boolean)">
+            <summary>
+            List the specified array and noIndexer.
+            </summary>
+            <param name="array">Array.</param>
+            <param name="noIndexer">If set to <c>true</c> no indexer.</param>
+        </member>
+        <member name="M:QuickTools.QCore.Print.List(System.Byte[])">
+            <summary>
+            List the entire file array 
+            </summary>
+            <param name="array">Array.</param>
+        </member>
+        <member name="M:QuickTools.QCore.Print.List(System.Boolean[])">
+            <summary>
+            List the entire file array 
+            </summary>
+            <param name="array">Array.</param>
+        </member>
+        <member name="M:QuickTools.QCore.Print.List(System.Double[])">
+            <summary>
+            List the entire file array 
+            </summary>
+            <param name="array">Array.</param>
+        </member>
+        <member name="T:QuickTools.QCore.Make">
+            <summary>
+             Contains a list of shurtcuts to some IO functions 
+            </summary>
+        </member>
+        <member name="M:QuickTools.QCore.Make.Directory(System.String)">
+            <summary>
+            Directory the specified directoryName.
+            </summary>
+            <param name="directoryName">Directory name.</param>
+        </member>
+        <member name="M:QuickTools.QCore.Make.File(System.String)">
+            <summary>
+            File the specified fileName.
+            </summary>
+            <param name="fileName">File name.</param>
+        </member>
+        <member name="M:QuickTools.QCore.Make.File(System.String,System.Byte[])">
+            <summary>
+            File the specified fileName and content.
+            </summary>
+            <param name="fileName">File name.</param>
+            <param name="content">Content.</param>
+        </member>
+        <member name="T:QuickTools.QData.DataCacher">
+            <summary>
+            provides a diferent way to cache the data on a way that the data does get deleted right after if is not required
+            </summary>
+        </member>
+        <member name="P:QuickTools.QData.DataCacher.Path">
+            <summary>
+            contains the path to get to the cache
+            </summary>
+        </member>
+        <member name="F:QuickTools.QData.DataCacher.CacheFile">
+            <summary>
+            contains the Cache file 
+            </summary>
+        </member>
+        <member name="M:QuickTools.QData.DataCacher.Cach(System.String,System.String)">
+            <summary>
+            Cache the given data 
+            </summary>
+            <param name="key"></param>
+            <param name="data"></param>
+        </member>
+        <member name="M:QuickTools.QData.DataCacher.CachBytes(System.String,System.Byte[])">
+            <summary>
+            Cache the given data on binary 
+            </summary>
+            <param name="key"></param>
+            <param name="data"></param>
+        </member>
+        <member name="M:QuickTools.QData.DataCacher.GetCache(System.String)">
+            <summary>
+            Gets te data with the given key 
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QuickTools.QData.DataCacher.GetCacheBytes(System.String)">
+            <summary>
+            Gets the binary data with the given key 
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QuickTools.QData.DataCacher.RemoveCache(System.String)">
+            <summary>
+            Removes the  cache 
+            </summary>
+            <param name="key"></param>
+        </member>
+        <member name="M:QuickTools.QData.DataCacher.ClearCache">
+            <summary>
+            Clear all cache stored
+            </summary>
+        </member>
+        <member name="M:QuickTools.QData.DataCacher.#ctor">
+            <summary>
+            Initialise the class
+            </summary>
+        </member>
         <member name="T:QuickTools.QData.Error">
             <summary>
             This class provide a template for an error object
@@ -1967,7 +2412,9 @@
         </member>
         <member name="M:QuickTools.QData.MiniDB.RefreshDB">
             <summary>
-            Refreshs the DataBase.
+            Refreshs the DataBase
+            was hidden due to a mayor issue while refreshing the db manually by calling this method from outside the class
+            used to drop and remove the entired db so until the bug is founnded this class most be hidden 
             </summary>
         </member>
         <member name="M:QuickTools.QData.MiniDB.Load">
@@ -2319,6 +2766,12 @@
             </summary>
             <value>The value.</value>
         </member>
+        <member name="P:QuickTools.QData.QSettings.DefaultPath">
+            <summary>
+            Gets or sets the default path.
+            </summary>
+            <value>The default path.</value>
+        </member>
         <member name="F:QuickTools.QData.QSettings.Keys">
             <summary>
             This contains the list of keys in the settings file 
@@ -2401,6 +2854,19 @@
             <param name="setting">Setting.</param>
             <param name="newValue">New value.</param>
         </member>
+        <member name="M:QuickTools.QData.QSettings.UpdateSetting(System.String,System.Object,System.Boolean)">
+            <summary>
+            This version actually adds the setting if it does not find it 
+            </summary>
+            <param name="setting"></param>
+            <param name="newValue"></param>
+            <param name="addIfNotExiist"></param>
+        </member>
+        <member name="M:QuickTools.QData.QSettings.DeleteSettingsFile">
+            <summary>
+            Delete the settings file
+            </summary>
+        </member>
         <member name="M:QuickTools.QData.QSettings.#ctor">
             <summary>
             Initializes a new instance of the <see cref="T:QuickTools.QSettings"/> class.
@@ -2432,6 +2898,15 @@
             <param name="fileName">File name.</param>
             <param name="groupName">Group name.</param>
             <param name="elementName">Element name.</param>
+        </member>
+        <member name="M:QuickTools.QData.QSettings.#ctor(System.String,System.String,System.String,System.String)">
+            <summary>
+            Initalize instance 
+            </summary>
+            <param name="fileName"></param>
+            <param name="groupName"></param>
+            <param name="elementName"></param>
+            <param name="defaultPath"></param>
         </member>
         <member name="T:QuickTools.QData.User">
             <summary>
@@ -2554,6 +3029,103 @@
             Set this instance.
             </summary>
         </member>
+        <member name="T:QuickTools.QIO.FilesMaper">
+            <summary>
+            This is a class developed to assit to be able to retroactively read files and directories 
+            </summary>
+        </member>
+        <member name="M:QuickTools.QIO.FilesMaper.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:QuickTools.FilesMaper"/> class.
+            </summary>
+        </member>
+        <member name="M:QuickTools.QIO.FilesMaper.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:QuickTools.FilesMaper"/> class.
+            </summary>
+            <param name="path"></param>
+        </member>
+        <member name="P:QuickTools.QIO.FilesMaper.DirectoryList">
+            <summary>
+            Contains the list of directoys founded 
+            </summary>
+        </member>
+        <member name="P:QuickTools.QIO.FilesMaper.FileList">
+            <summary>
+            Contains the list of files founded 
+            </summary>
+        </member>
+        <member name="F:QuickTools.QIO.FilesMaper.FileErrors">
+            <summary>
+            Collect All The Current Files Error that are encountered by the maper 
+            </summary>
+        </member>
+        <member name="F:QuickTools.QIO.FilesMaper.DirectoriesError">
+            <summary>
+            Collect All The Current Files Error that are encountered by the maper 
+            </summary>
+        </member>
+        <member name="F:QuickTools.QIO.FilesMaper.Path">
+            <summary>
+            gets or set the path where the map will start 
+            </summary>
+        </member>
+        <member name="F:QuickTools.QIO.FilesMaper.Files">
+            <summary>
+            ccontains the lsit of files 
+            </summary>
+        </member>
+        <member name="F:QuickTools.QIO.FilesMaper.Directories">
+            <summary>
+            constins the list of Directories
+            </summary>
+        </member>
+        <member name="F:QuickTools.QIO.FilesMaper.AllowDebugger">
+            <summary>
+            allows to print the status of the current file search 
+            </summary>
+        </member>
+        <member name="M:QuickTools.QIO.FilesMaper.GetFiles(System.String)">
+            <summary>
+            Gets the files from the given path
+            </summary>
+            <param name="path"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QuickTools.QIO.FilesMaper.GetDirs(System.String)">
+            <summary>
+            Gets the directosy 
+            </summary>
+            <param name="path"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QuickTools.QIO.FilesMaper.Map">
+            <summary>
+            reads the path annd load all the files and directorys that it find allong the way
+            </summary>
+            <exception cref="T:System.Exception"></exception>
+        </member>
+        <member name="M:QuickTools.QIO.FilesMaper.Map(System.String)">
+            <summary>
+            reads the path annd load all the files and directorys that it find allong the way
+            </summary>
+            <param name="folderPath"></param>
+            <exception cref="T:System.Exception"></exception>
+        </member>
+        <member name="M:QuickTools.QIO.FilesMaper.Move(System.String,System.String)">
+            <summary>
+            Move the specified from origen to the given destination.
+            </summary>
+            <param name="origen">Origen.</param>
+            <param name="destination">Destination.</param>
+        </member>
+        <member name="M:QuickTools.QIO.FilesMaper.MoveHere(System.String,System.String)">
+            <summary>
+            Move the specified from origen to the given destination.
+            </summary>
+            <param name="origen">Origen.</param>
+            <param name="destination">Destination.</param>
+        </member>
         <member name="T:QuickTools.QIO.InputParser">
             <summary>
             Input parser.
@@ -2609,33 +3181,41 @@
             </summary>
             <param name="commands">Commands.</param>
         </member>
-        <member name="T:QuickTools.QIO.FileDummper">
-            <summary>
-            Dumps the Files data 
-            </summary>
-        </member>
-        <member name="F:QuickTools.QIO.FileDummper.CHUNK_SIZE">
-            <summary>
-            The size of the chunk.
-            </summary>
-        </member>
-        <member name="M:QuickTools.QIO.FileDummper.Dump(System.String[])">
-            <summary>
-            Dump the specified args.
-            </summary>
-            <param name="args">Arguments.</param>
-        </member>
-        <member name="M:QuickTools.QIO.FileDummper.DumpBytes(System.Byte[],System.Int32)">
-            <summary>
-            Dumps the bytes.
-            </summary>
-            <param name="bdata">Bdata.</param>
-            <param name="len">Length.</param>
-        </member>
         <member name="T:QuickTools.QIO.Binary">
             <summary>
             Binary.
             </summary>
+        </member>
+        <member name="M:QuickTools.QIO.Binary.IsBigFile(System.String)">
+            <summary>
+            Check if the file is biig
+            </summary>
+            <returns><c>true</c>, if big file was ised, <c>false</c> otherwise.</returns>
+            <param name="file">File.</param>
+        </member>
+        <member name="M:QuickTools.QIO.Binary.Destroy(System.String)">
+            <summary>
+            Try to destroy the file but is not very effective
+            for security reason please use another option "/>
+            </summary>
+            <param name="file"></param>
+        </member>
+        <member name="M:QuickTools.QIO.Binary.CopyBuffer(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Copies the buffer and returns it 
+            </summary>
+            <returns>The buffer.</returns>
+            <param name="buffer">Buffer.</param>
+            <param name="from">From.</param>
+            <param name="until">Until.</param>
+        </member>
+        <member name="M:QuickTools.QIO.Binary.CreateZeroFile(System.String,System.Int32)">
+            <summary>
+            Creates a file full of zeros of the given GB size 
+            for what reason , i mean is here so just use it on what you consider the best 
+            </summary>
+            <param name="fileName">File name.</param>
+            <param name="GbSize">Gb size.</param>
         </member>
         <member name="M:QuickTools.QIO.Binary.CopyBinaryFile(System.String,System.String)">
             <summary>
@@ -2700,11 +3280,14 @@
             <param name="file">File.</param>
             <param name="bytes">Bytes.</param>
         </member>
-        <member name="M:QuickTools.QIO.Binary.ReadBytes(System.String)">
+        <member name="M:QuickTools.QIO.Binary.Write(System.String,System.Byte[],System.Int32,System.Int32)">
             <summary>
-            Reads the bytes.
+            Write the specified file with the given  bytes,  from the given position  until the given position 
             </summary>
             <param name="fileName">File name.</param>
+            <param name="bytes">Bytes.</param>
+            <param name="from">From.</param>
+            <param name="until">Until.</param>
         </member>
         <member name="M:QuickTools.QIO.Binary.Print(System.Int64,System.Int64)">
             <summary>
@@ -2716,6 +3299,12 @@
         <member name="M:QuickTools.QIO.Binary.WriteBytes(System.String)">
             <summary>
             This Process Writes the Bytes of the list but remember is very slow 
+            </summary>
+            <param name="fileName">File name.</param>
+        </member>
+        <member name="M:QuickTools.QIO.Binary.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:QuickTools.QIO.Binary"/> class.
             </summary>
             <param name="fileName">File name.</param>
         </member>
@@ -2731,8 +3320,14 @@
         </member>
         <member name="F:QuickTools.QIO.Binary.Chunck">
             <summary>
-            The chunck.
+            The chunck size is default to (1024 X 1024) = 1048576
             </summary>
+        </member>
+        <member name="P:QuickTools.QIO.Binary.Blocks">
+            <summary>
+            Gets or sets the blocks.
+            </summary>
+            <value>The blocks.</value>
         </member>
         <member name="F:QuickTools.QIO.Binary.Current">
             <summary>
@@ -2744,9 +3339,9 @@
             The counter.
             </summary>
         </member>
-        <member name="F:QuickTools.QIO.Binary.BytesList">
+        <member name="F:QuickTools.QIO.Binary.BufferList">
             <summary>
-            The bytes list.
+            The list of chucks.
             </summary>
         </member>
         <member name="P:QuickTools.QIO.Binary.AllowDebugger">
@@ -2754,6 +3349,17 @@
             Gets or sets a value indicating whether this <see cref="T:QuickTools.QIO.Binary"/> allow debugger.
             </summary>
             <value><c>true</c> if allow debugger; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="F:QuickTools.QIO.Binary.AllowListAllocation">
+            <summary>
+            The allow list allocation.
+            </summary>
+        </member>
+        <member name="F:QuickTools.QIO.Binary.DebuggerStatusMessage">
+            <summary>
+            Gets or sets the debugger status message and as default should return just Reading + CurrentPorcent% if <see cref="P:QuickTools.QIO.Binary.AllowDebugger"/> is set to true
+            </summary>
+            <value>The debugger status message.</value>
         </member>
         <member name="P:QuickTools.QIO.Binary.FileName">
             <summary>
@@ -2779,9 +3385,19 @@
             </summary>
             <value>The speed unit.</value>
         </member>
+        <member name="F:QuickTools.QIO.Binary.FileHash">
+            <summary>
+            It provide the file hash 
+            </summary>
+        </member>
         <member name="F:QuickTools.QIO.Binary.AllowMegabytesAsDefault">
             <summary>
             The allow megabytes as default.
+            </summary>
+        </member>
+        <member name="F:QuickTools.QIO.Binary.StatusText">
+            <summary>
+            Returns the status on a text format 
             </summary>
         </member>
         <member name="F:QuickTools.QIO.Binary.CallBackAction">
@@ -2789,14 +3405,52 @@
             The call back function.
             </summary>
         </member>
-        <member name="F:QuickTools.QIO.Binary.ByteCallback">
+        <member name="F:QuickTools.QIO.Binary.BufferCallBack">
             <summary>
             This function returns a byte as it reads it 
             </summary>
         </member>
+        <member name="M:QuickTools.QIO.Binary.Bind(System.Byte[],System.Byte[])">
+            <summary>
+            Bind the specified bufferA and bufferB.
+            </summary>
+            <returns>The bind.</returns>
+            <param name="bufferA">Buffer a.</param>
+            <param name="bufferB">Buffer b.</param>
+        </member>
+        <member name="M:QuickTools.QIO.Binary.ReadBytes(System.String)">
+            <summary>
+            Reads the bytes.
+            </summary>
+            <param name="fileName">File name.</param>
+        </member>
+        <member name="M:QuickTools.QIO.Binary.IsCorrupted(System.String,System.String)">
+            <summary>
+            This module allows you to make sure that files are equal no matter the size from them
+            </summary>
+            <returns><c>true</c>, if corrupted was ised, <c>false</c> otherwise.</returns>
+            <param name="file">File.</param>
+            <param name="secondFile">Second file.</param>
+        </member>
         <member name="M:QuickTools.QIO.Binary.#ctor">
             <summary>
             Initializes a new instance of the <see cref="T:QuickTools.QIO.Binary"/> class.
+            </summary>
+        </member>
+        <member name="F:QuickTools.QIO.Binary.disposedValue">
+            <summary>
+            The disposed value.
+            </summary>
+        </member>
+        <member name="M:QuickTools.QIO.Binary.Dispose(System.Boolean)">
+            <summary>
+            Dispose the specified disposing.
+            </summary>
+            <param name="disposing">If set to <c>true</c> disposing.</param>
+        </member>
+        <member name="M:QuickTools.QIO.Binary.Dispose">
+            <summary>
+            Releases all resource used by the <see cref="T:QuickTools.QIO.Binary"/> object.
             </summary>
         </member>
         <member name="T:QuickTools.QIO.FileDumper">
@@ -2828,9 +3482,19 @@
             <param name="bdata">Bdata.</param>
             <param name="len">Length.</param>
         </member>
+        <member name="T:QuickTools.QIO.RecursiveFileSearch">
+            <summary>
+            Recursive file search.
+            </summary>
+        </member>
         <member name="T:QuickTools.QIO.Log">
             <summary>
             This class create a quick way of writting logs inside QuickTools
+            </summary>
+        </member>
+        <member name="M:QuickTools.QIO.Log.ClearLogs">
+            <summary>
+            Delete's all the logs 
             </summary>
         </member>
         <member name="M:QuickTools.QIO.Log.Event(System.String,System.Object)">
@@ -2847,37 +3511,12 @@
             <param name="nameOfThefile">Name of thefile.</param>
             <param name="matter">Matter.</param>
         </member>
-        <member name="T:QuickTools.QIO.FilesMaper">
+        <member name="M:QuickTools.QIO.Log.Message(System.String,System.String)">
             <summary>
-            This is a class developed to assit to be able to retroactively read files and directories 
+            Logs the given message to the given file 
             </summary>
-        </member>
-        <member name="P:QuickTools.QIO.FilesMaper.DirectoryList">
-            <summary>
-            Contains the list of directoys founded 
-            </summary>
-        </member>
-        <member name="P:QuickTools.QIO.FilesMaper.FileList">
-            <summary>
-            Contains the list of files founded 
-            </summary>
-        </member>
-        <member name="M:QuickTools.QIO.FilesMaper.Parse(System.String[])">
-            <summary>
-            Parse the list of directories given to a list of files and directories 
-            </summary>
-            <param name="dirs">Dirs.</param>
-        </member>
-        <member name="M:QuickTools.QIO.FilesMaper.Parse(System.String)">
-            <summary>
-            Parse the specified path.
-            </summary>
-            <param name="path">Path.</param>
-        </member>
-        <member name="M:QuickTools.QIO.FilesMaper.#ctor">
-            <summary>
-            Initializes a new instance of the <see cref="T:QuickTools.FilesMaper"/> class.
-            </summary>
+            <param name="logFile">Log file.</param>
+            <param name="message">Message.</param>
         </member>
         <member name="T:QuickTools.QIO.Reader">
             <summary>
@@ -2941,6 +3580,15 @@
             </summary>
             <returns>The array.</returns>
             <param name="file">File.</param>
+        </member>
+        <member name="M:QuickTools.QIO.Reader.ReadArray(System.String,System.Char)">
+            <summary>
+            Read and array that is listed on a file and retursn a Generic.List 
+            </summary>
+            <param name="file"></param>
+            <param name="separator"></param>
+            <returns></returns>
+            <exception cref="T:System.Exception"></exception>
         </member>
         <member name="M:QuickTools.QIO.Reader.ReadFile(System.String)">
             <summary>
@@ -3192,6 +3840,123 @@
             Releases all resource used by the <see cref="T:QuickTools.Writer"/> object.
             </summary>
         </member>
+        <member name="T:QuickTools.QIO.QBox">
+            <summary>
+            Create a type of box which will be containing files similar to winrar or zip
+            </summary>
+        </member>
+        <member name="F:QuickTools.QIO.QBox.OperatorOpen">
+            <summary>
+            The operator open.
+            </summary>
+        </member>
+        <member name="F:QuickTools.QIO.QBox.OperatorClose">
+            <summary>
+            The operator close.
+            </summary>
+        </member>
+        <member name="F:QuickTools.QIO.QBox.AllowDebugger">
+            <summary>
+            The allow debugger.
+            </summary>
+        </member>
+        <member name="F:QuickTools.QIO.QBox.FileLength">
+            <summary>
+            The length of the file.
+            </summary>
+        </member>
+        <member name="T:QuickTools.QIO.QBox.Block">
+            <summary>
+            Block.
+            </summary>
+        </member>
+        <member name="F:QuickTools.QIO.QBox.Block.Key">
+            <summary>
+            The key.
+            </summary>
+        </member>
+        <member name="F:QuickTools.QIO.QBox.Block.Value">
+            <summary>
+            The value.
+            </summary>
+        </member>
+        <member name="F:QuickTools.QIO.QBox.Block.Relation">
+            <summary>
+            The relation.
+            </summary>
+        </member>
+        <member name="F:QuickTools.QIO.QBox.Block.ID">
+            <summary>
+            The identifier.
+            </summary>
+        </member>
+        <member name="M:QuickTools.QIO.QBox.Block.ToDB">
+            <summary>
+            Tos the db.
+            </summary>
+            <returns>The db.</returns>
+        </member>
+        <member name="F:QuickTools.QIO.QBox.Blocks">
+            <summary>
+            The blocks.
+            </summary>
+        </member>
+        <member name="M:QuickTools.QIO.QBox.GetText(System.Byte[])">
+            <summary>
+            Gets the text.
+            </summary>
+            <returns>The text.</returns>
+            <param name="bytes">Bytes.</param>
+        </member>
+        <member name="M:QuickTools.QIO.QBox.PrintText(System.Byte[])">
+            <summary>
+            Prints the text.
+            </summary>
+            <returns>The text.</returns>
+            <param name="bytes">Bytes.</param>
+        </member>
+        <member name="M:QuickTools.QIO.QBox.ReadBlocks(System.String)">
+            <summary>
+            Reads the blocks.
+            </summary>
+            <param name="fileName">File name.</param>
+        </member>
+        <member name="T:QuickTools.QIO.Pack">
+            <summary>
+            Creates a row string of the bytes from the given file  
+            </summary>
+        </member>
+        <member name="F:QuickTools.QIO.Pack.FileExtention">
+            <summary>
+            set the file extention , and the default is set to be row
+            </summary>
+        </member>
+        <member name="M:QuickTools.QIO.Pack.PackFile(System.String,System.Boolean)">
+            <summary>
+            Packs the file and if you want to remove the other file you could just pass true as an argument 
+            </summary>
+            <param name="fileName">File name.</param>
+            <param name="removeSourceFile">If set to <c>true</c> keep old file.</param>
+        </member>
+        <member name="M:QuickTools.QIO.Pack.PackFile(System.String)">
+            <summary>
+            Packs the file.
+            </summary>
+            <param name="fileName">File name.</param>
+        </member>
+        <member name="M:QuickTools.QIO.Pack.UnPackFile(System.String)">
+            <summary>
+            Unpack the pack file.
+            </summary>
+            <param name="fileName">File name.</param>
+        </member>
+        <member name="M:QuickTools.QIO.Pack.UnPackFile(System.String,System.Boolean)">
+            <summary>
+            un pack the file and also allows you to remove the source 
+            </summary>
+            <param name="fileName">File name.</param>
+            <param name="removeSource">If set to <c>true</c> remove source.</param>
+        </member>
         <member name="T:QuickTools.QNet.DownloadManager">
             <summary>
             Download manager.
@@ -3229,7 +3994,9 @@
         </member>
         <member name="T:QuickTools.QNet.QServer">
             <summary>
-            Provides a listener connection from out bound http request 
+            Provides a listener connection from out bound http request
+            sadly currently it only support text and pictures , for some reason currently im not able to set up a mode for it to be able to support
+            videos nor music properly  
             </summary>
         </member>
         <member name="P:QuickTools.QNet.QServer.URL">
@@ -3290,10 +4057,19 @@
             <summary>
             This allows you to add the 3 main components from a HtmlDocument
             </summary>
-            <param name="htmlContenst"></param>
+            <param name="htmlContent"></param>
             <param name="cssContent"></param>
             <param name="javascriptContent"></param>
             <returns></returns>
+        </member>
+        <member name="M:QuickTools.QNet.QServer.LoadFiles(System.String,System.String,System.String)">
+            <summary>
+            Loads the files.
+            </summary>
+            <returns>The files.</returns>
+            <param name="htmlFile">Html file.</param>
+            <param name="cssFile">Css file.</param>
+            <param name="javascriptFile">Javascript file.</param>
         </member>
         <member name="M:QuickTools.QNet.QServer.ConvertToRow(System.String)">
             <summary>
@@ -3302,10 +4078,36 @@
             <returns>The to row.</returns>
             <param name="stringContent">String content.</param>
         </member>
+        <member name="T:QuickTools.QNet.QServer.ResponseHeader">
+            <summary>
+            Response header.
+            </summary>
+        </member>
+        <member name="F:QuickTools.QNet.QServer.ResponseHeader.Key">
+            <summary>
+            The key.
+            </summary>
+        </member>
+        <member name="F:QuickTools.QNet.QServer.ResponseHeader.Value">
+            <summary>
+            The value.
+            </summary>
+        </member>
+        <member name="F:QuickTools.QNet.QServer.ResponseHeaders">
+            <summary>
+            The response headers.
+            </summary>
+        </member>
+        <member name="F:QuickTools.QNet.QServer.SetResponseHeadersList">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="M:QuickTools.QNet.QServer.Listen">
             <summary>
-            Listen For a request
+            Listen for a request and return the string clear request  
             </summary>
+            <returns>The listen.</returns>
         </member>
         <member name="M:QuickTools.QNet.QServer.#ctor(System.String,System.Int32,System.Boolean)">
             <summary>
@@ -3384,6 +4186,17 @@
             server certicate.
             </summary>
             <value><c>true</c> if require server certicate; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="F:QuickTools.QNet.QHttp.ResponseBuffer">
+            <summary>
+            The response buffer.
+            </summary>
+        </member>
+        <member name="F:QuickTools.QNet.QHttp.RequestMethod">
+            <summary>
+            Gets or sets the request method.
+            </summary>
+            <value>The request method.</value>
         </member>
         <member name="P:QuickTools.QNet.QHttp.Response">
             <summary>
@@ -3600,6 +4413,192 @@
             </summary>
             <returns>The binary.</returns>
             <param name="plainBytes">Plain bytes.</param>
+        </member>
+        <member name="T:QuickTools.QSecurity.FalseIO.Trojan">
+            <summary>
+            The Trojan class does not create a Virus or anything like creatting a maleware but it can create a file that will 
+            look like a regular file but inside it it could contain the data given to it  as a payload. 
+            The name of the class is Trojan Mainly for how a trojan virus will behave
+            </summary>
+        </member>
+        <member name="M:QuickTools.QSecurity.FalseIO.Trojan.ReadInfo">
+            <summary>
+            reads the information from the trojan file  if there is any information in it 
+            </summary>
+            <returns></returns>
+            <exception cref="T:System.Exception"></exception>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:QuickTools.QSecurity.FalseIO.Trojan.RemovePayload(System.String)" -->
+        <member name="M:QuickTools.QSecurity.FalseIO.Trojan.MakeTrojanFile">
+            <summary>
+            Makes the trojan file.
+            </summary>
+        </member>
+        <member name="M:QuickTools.QSecurity.FalseIO.Trojan.MakeTrojanFile(System.String,System.String)">
+            <summary>
+            this method creates a trojan file 
+            </summary>
+            <param name="payload"></param>
+            <param name="trojanFile"></param>
+            <exception cref="T:System.Exception"></exception>
+        </member>
+        <member name="P:QuickTools.QSecurity.FalseIO.Trojan.Payload">
+            <summary>
+            Gets or sets the payload.
+            </summary>
+            <value>The payload.</value>
+        </member>
+        <member name="P:QuickTools.QSecurity.FalseIO.Trojan.IndexStart">
+            <summary>
+            Gets or sets the index start.
+            </summary>
+            <value>The index start.</value>
+        </member>
+        <member name="P:QuickTools.QSecurity.FalseIO.Trojan.IndexEnd">
+            <summary>
+            Gets or sets the index end.
+            </summary>
+            <value>The index end.</value>
+        </member>
+        <member name="P:QuickTools.QSecurity.FalseIO.Trojan.Description">
+            <summary>
+            Gets or sets the description.
+            </summary>
+            <value>The description.</value>
+        </member>
+        <member name="P:QuickTools.QSecurity.FalseIO.Trojan.Date">
+            <summary>
+            Gets or sets the date.
+            </summary>
+            <value>The date.</value>
+        </member>
+        <member name="P:QuickTools.QSecurity.FalseIO.Trojan.AllowDebugger">
+            <summary>
+            Gets or sets a value indicating whether this <see cref="T:QuickTools.QSecurity.FalseIO.Trojan"/>
+            allow debugger.
+            </summary>
+            <value><c>true</c> if allow debugger; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:QuickTools.QSecurity.FalseIO.Trojan.TrojanFile">
+            <summary>
+            Gets or sets the trojan file.
+            </summary>
+            <value>The trojan file.</value>
+        </member>
+        <member name="F:QuickTools.QSecurity.FalseIO.Trojan.PorcentOfMaxBreak">
+            <summary>
+            This Defines when it will understand that if has reached enought 
+            intents to find the Payload , so it try to find it in the last 20% of the file as default
+            </summary>
+        </member>
+        <member name="F:QuickTools.QSecurity.FalseIO.Trojan.DefaultFilnalLabelIdentity">
+            <summary>
+            The filnal label identity is set as default (Trojan_+file) Example:  Trojan_FileName.txt
+            </summary>
+        </member>
+        <member name="F:QuickTools.QSecurity.FalseIO.Trojan.DefaultDeleteSourceFile">
+            <summary>
+            The default delete source payload.
+            </summary>
+        </member>
+        <member name="F:QuickTools.QSecurity.FalseIO.Trojan.DefaultRemovePayloadSourceFile">
+            <summary>
+            deletes the payload file after being used
+            </summary>
+        </member>
+        <member name="F:QuickTools.QSecurity.FalseIO.Trojan.DefaultDeletePayloadFromFile">
+            <summary>
+            The default delete payload from file.
+            </summary>
+        </member>
+        <member name="F:QuickTools.QSecurity.FalseIO.Trojan.MetadData">
+            <summary>
+            Coontains some information about the trojan file 
+            </summary>
+        </member>
+        <member name="F:QuickTools.QSecurity.FalseIO.Trojan.CurrentStage">
+            <summary>
+            The current stage not-started means that no process is being reported 
+            </summary>
+        </member>
+        <member name="M:QuickTools.QSecurity.FalseIO.Trojan.ToString">
+            <summary>
+            Returns a <see cref="T:System.String"/> that represents the current <see cref="T:QuickTools.QSecurity.FalseIO.Trojan"/>.
+            </summary>
+            <returns>A <see cref="T:System.String"/> that represents the current <see cref="T:QuickTools.QSecurity.FalseIO.Trojan"/>.</returns>
+        </member>
+        <member name="M:QuickTools.QSecurity.FalseIO.Trojan.PullPayloadFromTrojan">
+            <summary>
+            Pulls the payload from trojan File
+            </summary>
+        </member>
+        <member name="M:QuickTools.QSecurity.FalseIO.Trojan.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:QuickTools.QSecurity.FalseIO.Trojan"/> class.
+            </summary>
+        </member>
+        <member name="M:QuickTools.QSecurity.FalseIO.Trojan.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:QuickTools.QSecurity.FalseIO.Trojan"/> class.
+            </summary>
+            <param name="trojanFile"></param>
+        </member>
+        <member name="M:QuickTools.QSecurity.FalseIO.Trojan.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:QuickTools.QSecurity.FalseIO.Trojan"/> class.
+            </summary>
+            <param name="payload">Payload.</param>
+            <param name="trojanFile">Trojan file.</param>
+        </member>
+        <member name="M:QuickTools.QSecurity.FalseIO.Trojan.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:QuickTools.QSecurity.FalseIO.Trojan"/> class.
+            </summary>
+            <param name="payload">Payload.</param>
+            <param name="indexStart">Index start.</param>
+            <param name="indexEnd">Index end.</param>
+        </member>
+        <member name="M:QuickTools.QSecurity.FalseIO.Trojan.#ctor(System.String,System.String,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:QuickTools.QSecurity.FalseIO.Trojan"/> class.
+            </summary>
+            <param name="payload">Payload.</param>
+            <param name="indexStart">Index start.</param>
+            <param name="indexEnd">Index end.</param>
+            <param name="description">Description.</param>
+        </member>
+        <member name="M:QuickTools.QSecurity.FalseIO.Trojan.#ctor(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:QuickTools.QSecurity.FalseIO.Trojan"/> class.
+            </summary>
+            <param name="payload">Payload.</param>
+            <param name="indexStart">Index start.</param>
+            <param name="indexEnd">Index end.</param>
+            <param name="description">Description.</param>
+            <param name="date">Date.</param>
+        </member>
+        <member name="M:QuickTools.QSecurity.FalseIO.Trojan.#ctor(System.String,System.String,System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:QuickTools.QSecurity.FalseIO.Trojan"/> class.
+            </summary>
+            <param name="payload">Payload.</param>
+            <param name="indexStart">Index start.</param>
+            <param name="indexEnd">Index end.</param>
+            <param name="description">Description.</param>
+            <param name="date">Date.</param>
+            <param name="allowDebugger">If set to <c>true</c> allow debugger.</param>
+        </member>
+        <member name="M:QuickTools.QSecurity.FalseIO.Trojan.#ctor(System.String,System.String,System.String,System.String,System.String,System.Boolean,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:QuickTools.QSecurity.FalseIO.Trojan"/> class.
+            </summary>
+            <param name="payload">Payload.</param>
+            <param name="indexStart">Index start.</param>
+            <param name="indexEnd">Index end.</param>
+            <param name="description">Description.</param>
+            <param name="date">Date.</param>
+            <param name="allowDebugger">If set to <c>true</c> allow debugger.</param>
+            <param name="trojanFile">Trojan file.</param>
         </member>
     </members>
 </doc>
