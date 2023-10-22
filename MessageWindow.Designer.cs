@@ -45,12 +45,14 @@
             this.MessageDisplayBox.BackColor = System.Drawing.Color.Silver;
             this.MessageDisplayBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.MessageDisplayBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MessageDisplayBox.Location = new System.Drawing.Point(3, 31);
+            this.MessageDisplayBox.Location = new System.Drawing.Point(3, 39);
+            this.MessageDisplayBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MessageDisplayBox.Name = "MessageDisplayBox";
             this.MessageDisplayBox.ReadOnly = true;
-            this.MessageDisplayBox.Size = new System.Drawing.Size(1306, 653);
+            this.MessageDisplayBox.Size = new System.Drawing.Size(1469, 815);
             this.MessageDisplayBox.TabIndex = 0;
             this.MessageDisplayBox.Text = "";
+            this.MessageDisplayBox.Enter += new System.EventHandler(this.MessageDisplayBox_Enter);
             // 
             // MessageBoxDisplayOptions
             // 
@@ -60,14 +62,14 @@
             this.MessageDisplayResultsSaveBtn});
             this.MessageBoxDisplayOptions.Location = new System.Drawing.Point(0, 0);
             this.MessageBoxDisplayOptions.Name = "MessageBoxDisplayOptions";
-            this.MessageBoxDisplayOptions.Size = new System.Drawing.Size(103, 31);
+            this.MessageBoxDisplayOptions.Size = new System.Drawing.Size(127, 30);
             this.MessageBoxDisplayOptions.TabIndex = 1;
             this.MessageBoxDisplayOptions.Text = "toolStrip1";
             // 
             // MessageDisplayResultsSaveBtn
             // 
             this.MessageDisplayResultsSaveBtn.Name = "MessageDisplayResultsSaveBtn";
-            this.MessageDisplayResultsSaveBtn.Size = new System.Drawing.Size(90, 28);
+            this.MessageDisplayResultsSaveBtn.Size = new System.Drawing.Size(109, 25);
             this.MessageDisplayResultsSaveBtn.Text = "Save Results";
             this.MessageDisplayResultsSaveBtn.Click += new System.EventHandler(this.MessageDisplayResultsSaveBtn_Click);
             // 
@@ -79,12 +81,13 @@
             // 
             // MessageWindow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1310, 682);
+            this.ClientSize = new System.Drawing.Size(1474, 852);
             this.Controls.Add(this.MessageBoxDisplayOptions);
             this.Controls.Add(this.MessageDisplayBox);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "MessageWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MessageWindow";

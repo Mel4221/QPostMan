@@ -11,10 +11,10 @@ using System.Windows.Forms;
 
 namespace QPostMan
 {
-    
+   
     public partial class MessageWindow : Form
     {
-        public string MessageText;// = null; 
+         
         
         public MessageWindow()
         {
@@ -23,7 +23,7 @@ namespace QPostMan
 
         private void MessageWindow_Load(object sender, EventArgs e)
         {
-            this.MessageDisplayBox.Text = MessageText; 
+            
         }
 
         private void MessageDisplayResultsSaveBtn_Click(object sender, EventArgs e)
@@ -38,11 +38,12 @@ namespace QPostMan
             try
             {
                 string file = saveFileDialog.FileName.ToString(); 
-                if (file.IndexOf('.') == -1)
+                if (!file.Contains('.'))
                 {
                     file += ".txt"; 
                 }
-                Writer.Write(file, this.MessageText);
+                Writer.Write(file, Reader.Read("Request.txt"));
+                
             }
             catch
             {
@@ -50,8 +51,9 @@ namespace QPostMan
             }
         }
 
-      
-
-    
+        private void MessageDisplayBox_Enter(object sender, EventArgs e)
+        {
+            this.MessageDisplayBox.Text = Reader.Read("Request.txt");
+        }
     }
 }

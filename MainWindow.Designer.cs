@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindo));
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.TextBoxUrl = new System.Windows.Forms.TextBox();
             this.ProssesRequestBtn = new System.Windows.Forms.Button();
             this.RequestHeaders = new System.Windows.Forms.DataGridView();
@@ -41,24 +40,16 @@
             this.RequestLabel = new System.Windows.Forms.Label();
             this.ResponseLabel = new System.Windows.Forms.Label();
             this.ClearUrlInput = new System.Windows.Forms.Button();
+            this.LogsBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.RequestHeaders)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ResponseHeaders)).BeginInit();
             this.SuspendLayout();
-            // 
-            // toolStrip1
-            // 
-            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1310, 25);
-            this.toolStrip1.TabIndex = 0;
-            this.toolStrip1.Text = "toolStrip1";
             // 
             // TextBoxUrl
             // 
             this.TextBoxUrl.Location = new System.Drawing.Point(12, 39);
             this.TextBoxUrl.Name = "TextBoxUrl";
-            this.TextBoxUrl.Size = new System.Drawing.Size(1097, 38);
+            this.TextBoxUrl.Size = new System.Drawing.Size(1097, 44);
             this.TextBoxUrl.TabIndex = 1;
             this.TextBoxUrl.Text = "http://example.com/";
             this.TextBoxUrl.MouseLeave += new System.EventHandler(this.TextBoxUrl_MouseLeave);
@@ -150,7 +141,7 @@
             this.RequestLabel.ForeColor = System.Drawing.Color.Lime;
             this.RequestLabel.Location = new System.Drawing.Point(198, 80);
             this.RequestLabel.Name = "RequestLabel";
-            this.RequestLabel.Size = new System.Drawing.Size(139, 38);
+            this.RequestLabel.Size = new System.Drawing.Size(168, 46);
             this.RequestLabel.TabIndex = 5;
             this.RequestLabel.Text = "Request";
             // 
@@ -161,7 +152,7 @@
             this.ResponseLabel.ForeColor = System.Drawing.Color.Yellow;
             this.ResponseLabel.Location = new System.Drawing.Point(944, 83);
             this.ResponseLabel.Name = "ResponseLabel";
-            this.ResponseLabel.Size = new System.Drawing.Size(165, 38);
+            this.ResponseLabel.Size = new System.Drawing.Size(200, 46);
             this.ResponseLabel.TabIndex = 6;
             this.ResponseLabel.Text = "Response";
             // 
@@ -175,12 +166,20 @@
             this.ClearUrlInput.UseVisualStyleBackColor = false;
             this.ClearUrlInput.Click += new System.EventHandler(this.ClearUrlInput_Click);
             // 
+            // LogsBox
+            // 
+            this.LogsBox.Location = new System.Drawing.Point(12, 676);
+            this.LogsBox.Name = "LogsBox";
+            this.LogsBox.Size = new System.Drawing.Size(1288, 44);
+            this.LogsBox.TabIndex = 8;
+            // 
             // MainWindo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(19F, 37F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(1310, 682);
+            this.ClientSize = new System.Drawing.Size(1310, 730);
+            this.Controls.Add(this.LogsBox);
             this.Controls.Add(this.ClearUrlInput);
             this.Controls.Add(this.ResponseLabel);
             this.Controls.Add(this.RequestLabel);
@@ -188,15 +187,14 @@
             this.Controls.Add(this.RequestHeaders);
             this.Controls.Add(this.ProssesRequestBtn);
             this.Controls.Add(this.TextBoxUrl);
-            this.Controls.Add(this.toolStrip1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.Black;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "MainWindo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "QPostMan";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.MainWindo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.RequestHeaders)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ResponseHeaders)).EndInit();
@@ -206,8 +204,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.TextBox TextBoxUrl;
         private System.Windows.Forms.Button ProssesRequestBtn;
         private System.Windows.Forms.DataGridView RequestHeaders;
@@ -219,6 +215,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.Button ClearUrlInput;
+        private System.Windows.Forms.TextBox LogsBox;
     }
 }
 

@@ -1,0 +1,2 @@
+It looks like something went wrong more info: 
+ The remote name could not be resolved: 'github.com'

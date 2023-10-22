@@ -4497,11 +4497,6 @@
             The response headers.
             </summary>
         </member>
-        <member name="F:QuickTools.QNet.QServer.SetResponseHeadersList">
-            <summary>
-            
-            </summary>
-        </member>
         <member name="M:QuickTools.QNet.QServer.Listen">
             <summary>
             Listen for a request and return the string clear request  

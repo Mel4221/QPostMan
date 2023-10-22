@@ -1,4 +1,5 @@
 ﻿using QuickTools.QCore;
+using QuickTools.QIO; 
 using QuickTools.QNet;
 using System;
 using static System.Console; 
@@ -64,58 +65,73 @@ namespace QPostMan
             if(text !=  "http://example.com/")
             {
                 QHttp http = new QHttp();
+                 
                 DataGridView requestView = this.RequestHeaders;
-
-                for (int col = 0; col < requestView.RowCount-1; col++)
+                try
                 {
-                    try
-                    {
+                    for (int col = 0; col < requestView.RowCount-1; col++)
+                {
+
                         http.Headers.Add(new QHttp.Header()
                         {
                             Key = requestView.Rows[col].Cells[0].Value.ToString(),
                             Value = requestView.Rows[col].Cells[1].Value.ToString()
                         });
-                    }
-                    catch
-                    {
-                        break;
-                    }
+                   
+                }
+                }
+                catch(Exception ex)
+                {
+                    string str = $"There was an error while adding the  Headers: \n {ex}"; 
+                    LogsBox.Text +=  str;
+                    Log.Event("AddingHeadersError", str); 
+                    
                 }
 
 
                 //http.Headers.ForEach(x => { Console.WriteLine($" {x.Key} = {x.Value}"); });
-                
-                http.Url = text;
-        MessageWindow messageWindow = new MessageWindow();
 
-        messageWindow.MessageText = http.Get();
+                http.Url = text;
+
+                try
+                {
+                    text = http.Get(); 
+                    Writer.Write("Request.txt",  text == ""? "The request was OK but there was no response":text); 
+               
+                MessageWindow messageWindow = new MessageWindow();
                 messageWindow.Show();
 
-
-                if (http.Headers.Count == 0)
+            }
+                catch(Exception ex)
                 {
-                    return;
-                }
+                string str = $"There was an error while the Reaching the Url : \n {ex}";
+                LogsBox.Text +=  str;
+                Log.Event("ErrorWhileReachingTheUrl", str);
+            }
 
-                if (http.Headers == null)
-                {
-                    return;
-                }
 
-                for (int col = 0; col < http.Response.Headers.Count-1; col++)
+
+
+            try
                 {
-                    try
+                    if(http.Response == null || http.Response.Headers == null)
                     {
+                        return; 
+                    }
+                    for (int col = 0; col < http.Response.Headers.Count-1; col++)
+                    {
+
                         this.ResponseHeaders.Rows[col].Cells[0].Value = http.Response.Headers.GetKey(col);
                         this.ResponseHeaders.Rows[col].Cells[1].Value = http.Response.Headers[col];
-                    }
-                    catch
-                    {
-                             
-                        break;
+                        
                     }
                 }
-                
+                catch(Exception ex)
+                {
+                    string str = $"There was an error while reading the Headers:  \n {ex}";
+                    LogsBox.Text +=  str;
+                    Log.Event("ErrorWhileReadingTheHeaders", str);
+                }
                 
                    
                   

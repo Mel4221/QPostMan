@@ -13,3 +13,18 @@ C:\Users\Melquiceded Balbi\Documents\csharp\QPostMan\obj\Debug\QPostMan.csproj.C
 C:\Users\Melquiceded Balbi\Documents\csharp\QPostMan\obj\Debug\QPostMan.csproj.CopyComplete
 C:\Users\Melquiceded Balbi\Documents\csharp\QPostMan\obj\Debug\QPostMan.exe
 C:\Users\Melquiceded Balbi\Documents\csharp\QPostMan\obj\Debug\QPostMan.pdb
+C:\Users\Melquiceded\Documents\csharp\QPostMan\bin\Debug\QPostMan.exe.config
+C:\Users\Melquiceded\Documents\csharp\QPostMan\bin\Debug\QPostMan.exe
+C:\Users\Melquiceded\Documents\csharp\QPostMan\bin\Debug\QPostMan.pdb
+C:\Users\Melquiceded\Documents\csharp\QPostMan\bin\Debug\QuickTools.dll
+C:\Users\Melquiceded\Documents\csharp\QPostMan\bin\Debug\QuickTools.xml
+C:\Users\Melquiceded\Documents\csharp\QPostMan\obj\Debug\QPostMan.csproj.AssemblyReference.cache
+C:\Users\Melquiceded\Documents\csharp\QPostMan\obj\Debug\QPostMan.csproj.SuggestedBindingRedirects.cache
+C:\Users\Melquiceded\Documents\csharp\QPostMan\obj\Debug\QPostMan.MainWindo.resources
+C:\Users\Melquiceded\Documents\csharp\QPostMan\obj\Debug\QPostMan.MessageWindow.resources
+C:\Users\Melquiceded\Documents\csharp\QPostMan\obj\Debug\QPostMan.Properties.Resources.resources
+C:\Users\Melquiceded\Documents\csharp\QPostMan\obj\Debug\QPostMan.csproj.GenerateResource.cache
+C:\Users\Melquiceded\Documents\csharp\QPostMan\obj\Debug\QPostMan.csproj.CoreCompileInputs.cache
+C:\Users\Melquiceded\Documents\csharp\QPostMan\obj\Debug\QPostMan.csproj.CopyComplete
+C:\Users\Melquiceded\Documents\csharp\QPostMan\obj\Debug\QPostMan.exe
+C:\Users\Melquiceded\Documents\csharp\QPostMan\obj\Debug\QPostMan.pdb
